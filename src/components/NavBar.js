@@ -13,17 +13,17 @@ export default function NavBar() {
                 isOnTouch={isOnTouch}
             />
             <div className="nav-bar collapse-mobile">
-                <NavItem to="/tableware" className="nav-item" activeClassName="nav-item--active">
-                    香水系列
+                <NavItem to="/Perfume" className="nav-item" activeClassName="nav-item--active">
+                    PERFUME
                 </NavItem>
-                <NavItem to="/cookware" className="nav-item" activeClassName="nav-item--active">
-                    香氛系列
+                <NavItem to="/Fixweb" className="nav-item" activeClassName="nav-item--active">
+                    CANDLES
                 </NavItem>
-                <NavItem to="/home-accessories" className="nav-item" activeClassName="nav-item--active">
-                    沐浴系列
+                <NavItem to="/Fixweb" className="nav-item" activeClassName="nav-item--active">
+                    BATH/BODY
                 </NavItem>
-                <NavItem to="/lighting" className="nav-item" activeClassName="nav-item--active">
-                    居室系列
+                <NavItem to="/Fixweb" className="nav-item" activeClassName="nav-item--active">
+                    DIFFUSER
                 </NavItem>
                 
             </div>

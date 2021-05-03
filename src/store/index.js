@@ -1,54 +1,73 @@
-import { createContext, useReducer } from "react";
-import products from "../json/products.json"
+import { createContext } from "react";
+import useReducerWithThunk from "use-reducer-thunk";
 import { 
-   PAGE_TITLE_SET,
-   PAGE_CONTENT_SET,
-   NAVBAR_ITEM_SET,
-   CART_ADD_ITEM,
-   CART_REMOVE_ITEM, 
+  SET_PAGE_TITLE,
+  SET_PAGE_CONTENT,
+  SET_NAVBAR_ACTIVEITEM,
+  ADD_CART_ITEM,
+  REMOVE_CART_ITEM,
+  SET_PRODUCT_DETAIL,
+  BEGIN_PRODUCTS_REQUEST,
+  SUCCESS_PRODUCTS_REQUEST,
+  FAIL_PRODUCTS_REQUEST,
 } from "../utils/constants"
 
 export const StoreContext = createContext();
+let cartItems = localStorage.getItem("cartItems")
+  ? JSON.parse(localStorage.getItem("cartItems"))
+  : [];
+
 
 const initialState = {
-   page: {
-      title: "NORDIC NEST Shopping Cart",
-      products,
-   },
-   navBar: {
-      activeItem: "",
-   },
-   cartItems: [],
+   allProducts: [],
+  page: {
+    title: "Freesia",
+    products: [],
+  },
+  productDetail: {
+    product: {},
+    qty: 1,
+  },
+  navBar: {
+    activeItem: "/",
+  },
+  cartItems,
+  feedProducts: {
+   loading: false,
+   error: null,
+ },
+  requestProducts: {
+   loading: false,
+   error: null,
+ }
 };
-
-let cartItems = {};
 
 function reducer(state, action) {
    switch (action.type) {
-      case PAGE_TITLE_SET:
-         return {
-            ...state,
-            page: {
-               ...state.page,
-               title: action.payload,
-            },
-         };
-      case PAGE_CONTENT_SET:
-         return {
-            ...state,
-            page: {
-               ...state.page,
-               products: action.payload,
-            },
-         };
-      case NAVBAR_ITEM_SET:
+      case SET_PAGE_TITLE:
+      return {
+        ...state,
+        page: {
+          ...state.page,
+          title: action.payload
+        },
+      };
+    case SET_PAGE_CONTENT:
+      return {
+        ...state,
+        page: {
+          ...state.page,
+          ...action.payload
+        },
+      };
+      case SET_NAVBAR_ACTIVEITEM:
          return {
             ...state,
             navBar: {
-               activeItem: action.payload
-            }
+               activeItem: action.payload,
+             },
          };
-      case CART_ADD_ITEM:
+      case ADD_CART_ITEM:
          const item = action.payload;
          const product = state.cartItems.find((x) => x.id === item.id);
          if (product) {
@@ -59,16 +78,24 @@ function reducer(state, action) {
          }
          cartItems = [...state.cartItems, item];
          return { ...state, cartItems };
-      case CART_REMOVE_ITEM:
+      case REMOVE_CART_ITEM:
          cartItems = state.cartItems.filter((x) => x.id !== action.payload);
          return { ...state, cartItems };
+      case SET_PRODUCT_DETAIL:
+         return { ...state, productDetail: { ...state.productDetail, ...action.payload} };
+      case BEGIN_PRODUCTS_REQUEST:
+         return { ...state, requestProducts: { ...state.requestProducts, loading: true } }
+      case SUCCESS_PRODUCTS_REQUEST:
+         return { ...state, requestProducts: { ...state.requestProducts, loading: false } }
+      case FAIL_PRODUCTS_REQUEST:
+         return { ...state, requestProducts: { ...state.requestProducts, loading: false, error: action.payload } }
       default:
          return state;
    }
 }
 
 export function StoreProvider(props) {
-   const [state, dispatch] = useReducer(reducer, initialState);
+   const [state, dispatch] = useReducerWithThunk(reducer, initialState,"example");
    const value = { state, dispatch };
 
    return (

@@ -1,20 +1,21 @@
 import { Layout } from 'antd';
-import { useContext } from "react"; 
+import { useContext , useEffect} from "react"; 
 import NavBar from "../components/NavBar";
 import AppHeader from "../components/Header"
 import AppFooter from "../components/Footer"
 import ProductDetail from "../components/ProductDetail";
-import products from "../json/products.json";
-import { StoreContext } from "../store";
+import { setProductDetail } from "../actions";
+import { StoreContext } from "../store"
 
 
 const { Header, Content,Footer } = Layout;
 
 function Product({ match }) {
-   const { state: { page: {title,products} } } = useContext(StoreContext);
-   const product = products.find(
-      x => x.id === match.params.productId
-   );
+   const { dispatch } = useContext(StoreContext);
+   useEffect(() => {
+      setProductDetail(dispatch, match.params.productId, 0, match.params.category)
+      }, [])
+   
    return (
       <Layout className="container main-layout">
          <Layout className="bg-gray">
@@ -22,10 +23,10 @@ function Product({ match }) {
          </Layout>
          <Layout className="bg-gray">
          <Header className="layout-header">
-            <AppHeader title={title} />
+            <AppHeader title="Freesia" />
          </Header>
             <Content className="layout-content">
-               <ProductDetail product={product} />
+               <ProductDetail />
             </Content>
             <Footer className="layout-footer">
                <AppFooter/>

@@ -1,46 +1,37 @@
 import { Modal, Button, Select } from "antd";
-import { useContext ,useState} from "react";
+import { useContext ,useEffect} from "react";
+import { Link } from "react-router-dom";
 import { StoreContext } from "../store"
-import { CartIcon } from "./Icons";
-import { CART_ADD_ITEM, CART_REMOVE_ITEM } from "../utils/constants";
+import { addCartItem, removeCartItem, setProductDetail } from "../actions";
 
 const { Option } = Select;
 
- function CartModal({ isModalVisible, toggleModal }) {
+export default function CartModal({ isModalVisible, toggleModal }) {
    const { state: { cartItems }, dispatch } = useContext(StoreContext);
    const handleCancel = () => toggleModal(!isModalVisible);
-   const addToCart = (product, qty,Size) => {
-      dispatch({
-         type: CART_ADD_ITEM,
-         payload: {
-            id: product.id,
-            name: product.name,
-            image: product.image,
-            price: product.price,
-            countInStock: product.countInStock,
-            qty,
-            Size,
-         },
-      });
-   };
-
-   const removeFromCart = (productId) => {
-      dispatch({ type: CART_REMOVE_ITEM, payload: productId });
-   };
-
    const getTotalPrice = () => {
       return (cartItems.length > 0) ?
          cartItems.reduce((sum, item) => sum + item.price * item.qty, 0)
          : 0;
    }
 
+   // const onAuth = () => {
+   //    const auth = authenticateAnonymously();
+   //    console.log(`auth =`);
+   //    console.log(auth)
+   // }
+
+   useEffect(() => {
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+   }, [cartItems])
+
    return (
-      //<Modal
-      //   title="Shopping Bag"
-      // visible={isModalVisible}
-      // onCancel={handleCancel}
-      // footer={null}
-      //>
+      <Modal
+         title="Shopping Bag"
+         visible={isModalVisible}
+         onCancel={handleCancel}
+         footer={null}
+      >
       <>
       <hr className="hr-line-productdetail" />
       <div className="cart-title-bg">
@@ -51,10 +42,15 @@ const { Option } = Select;
             <div>Cart is empty</div>
          ) : (
             cartItems.map(item => (
-               <div key={item.id} className="cart-item">
-                  <div className="cart-image">
-                     <img src={item.image} alt={item.name} />
-                  </div>
+               <li key={item.id} className="cart-item">
+                  <Link to={`/product/${item.id}`}>
+                     <div className="cart-image" onClick={()=>{
+                        setProductDetail(dispatch, item.id, item.qty);
+                        handleCancel();
+                     }}>
+                        <img src={item.image} alt={item.name} />
+                     </div>
+                  </Link>
                   <div className="cart-item-content">
                      <div className="cart-name">{item.name}</div>
                     <div className="cart-size">{item.Size}</div>
@@ -63,7 +59,7 @@ const { Option } = Select;
                         <Select
                            defaultValue={item.qty}
                            className="select-style"
-                           onChange={(val) => addToCart(item, val)}
+                           onChange={(qty) => addCartItem(dispatch, item, qty)}
                         >
                            {[...Array(item.countInStock).keys()].map((x) => (
                               <Option key={x + 1} value={x + 1}>
@@ -77,11 +73,11 @@ const { Option } = Select;
                      <div className="cart-price">
                         ${item.price * item.qty}    
                      </div>
-                     <div className="cart-item-delete" onClick={()=>removeFromCart(item.id)}>
+                     <div className="cart-item-delete" onClick={()=>removeCartItem(item.id)}>
                         x
                      </div>
                      </div>
-               </div>
+               </li>
             ))
          )}
          </div>
@@ -103,5 +99,3 @@ const { Option } = Select;
       //</Modal>
    );
 }
-
-export default CartModal;

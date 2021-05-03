@@ -1,29 +1,16 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom"
-import { 
-   PAGE_TITLE_SET, 
-   PAGE_CONTENT_SET, 
-   NAVBAR_ITEM_SET } from "../utils/constants"
 import { StoreContext } from "../store"
-import NavBar from "./NavBar";
-import products from "../json/products.json"
+import { pageContentsSet, activeNavItemSet } from "../actions";
 import CartSummary from "./CartSummary";
+import { getJSON } from "../api";
 
 export default function Header({title}) {
    const { dispatch } = useContext(StoreContext);
    const onClickHeader = () => {
-      dispatch({ 
-         type: PAGE_TITLE_SET, 
-         payload: "Jo Malon" 
-      });
-      dispatch({ 
-         type: PAGE_CONTENT_SET, 
-         payload: products, 
-      });
-      dispatch({ 
-         type: NAVBAR_ITEM_SET, 
-         payload: "",
-      });
+      const json = getJSON("/");
+      pageContentsSet(dispatch, "/",  "Freesia");
+      activeNavItemSet(dispatch, "/");
    };
 
    return (
@@ -31,9 +18,7 @@ export default function Header({title}) {
          <div className="header-wrap">
             <div className="header-text"  onClick={onClickHeader}>
                <Link to="/">
-               <h1 className="header-title" >
-                  Freesia
-               </h1>
+               <h1 className="header-title" >{title}</h1>
                </Link>
             </div>
             <CartSummary />   

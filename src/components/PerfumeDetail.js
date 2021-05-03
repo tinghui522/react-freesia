@@ -1,14 +1,12 @@
 import products from "../json/products.json"
-import { useState } from "react";
 import { Row, Col } from "antd";
-import { Select } from 'antd';
-import { Card } from "antd";
-import { Link } from "react-router-dom"
 import ProductItem from "./ProductItem";
+import { useContext } from "react";
+import { StoreContext } from "../store"
 
 
-export default function PerfumeDetail({product}) {
-    
+export default function PerfumeDetail() {
+    const { dispatch } = useContext(StoreContext);
     return (
         <content className="content"> 
         <hr className="hr-line-productdetail" />

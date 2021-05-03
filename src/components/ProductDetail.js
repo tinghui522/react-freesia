@@ -1,14 +1,15 @@
-import { useState } from "react";
-import { Row, Col } from "antd";
-import { Select } from 'antd';
-import { Card } from "antd"
+import { useContext } from "react";
+import { Select, Row, Col, Spin } from "antd";
+import { LoadingOutlined } from '@ant-design/icons';
 import AddToCart from "./AddToCart"
+import { StoreContext } from "../store"
+import { setProductDetail } from "../actions";
 
 const { Option } = Select;
 
-function ProductDetail({ product,testing }) {
-   const [qty, setQty] = useState(product.countInStock > 0 ? 1 : 0);
-   const [Size, setSize] = useState(product.countInStock > 0 ? product.Size[0] : 0);
+function ProductDetail() {
+   const { state: { productDetail: { product, qty,Size }, requestProducts: { loading } }, dispatch } = useContext(StoreContext);
+   const antIcon = <LoadingOutlined style={{ fontSize: 80, color: "#8183ff" }} spin />;
 
    return (
       <content className="content"> 
@@ -16,6 +17,13 @@ function ProductDetail({ product,testing }) {
       <div className="perfume-title-bg">
       </div>
       <p className="perfume-title">PERFUMES</p>
+      <>
+         {loading
+            ? (
+               <div className="spinner-wrap">
+                  <Spin indicator={antIcon} className="spinner" />
+               </div>
+            ) : (
       <Row gutter={[0, 8]}>
          <Col
             lg={{ span: 4, offset: 3 }}
@@ -46,9 +54,10 @@ function ProductDetail({ product,testing }) {
                   <p className="product-qty">
                      Qty: {"   "}
                      <Select 
-                        defaultValue={qty} 
+                        defaultValue={qty}
+                        value={qty} 
                         className="select-style"
-                        onChange={val=>setQty(val)}
+                        onChange={val => setProductDetail(dispatch, product.id, val, product.category)}
                      >
                         {[...Array(product.countInStock).keys()].map((x) => (
                            <Option key={x + 1} value={x + 1}>
@@ -61,21 +70,22 @@ function ProductDetail({ product,testing }) {
                      Size: {"   "}
                      <Select
                         defaultValue={Size}
+                        value={Size}
                         className="select-style"
-                        onChange={val => setSize(val)}
+                        onChange={val => setProductDetail(dispatch, product.id, val, product.category)}
                      >
-                        {[...Array(product.Size.length).keys()].map((x) => (
+                         {/* {[...Array(product.Size).keys()].map((x) => (
                            <Option value={product.Size[x]}>
                               {product.Size[x]}
                            </Option>
-                        ))}
+                        ))}  */}
                      </Select>
                   </p>
                </div>
                <hr className="hr-line-productdetail3" />
                <div className="product-price-wrap">
                   <p className="product-status">
-                     Availability: {product.Size.length > 0 ? "In Stock" : "Unavailable."}
+                     Availability: {product.countInStock > 0 ? "In Stock" : "Unavailable."}
                   </p>
                   <p className="product-price product-price--large">
                   ${product.price}.00
@@ -85,6 +95,9 @@ function ProductDetail({ product,testing }) {
             </div>
          </Col>
       </Row>
+      )
+   }
+</>
       <div className="test">
       <hr className="hr-line-productdetail" />
          <p className="test-title">Tasting Notes</p>

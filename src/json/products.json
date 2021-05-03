@@ -1,6 +1,6 @@
 [
   {
-    "id": "IuFGYl",
+    "id": "ZmjJ8v0P8A4ea4VIVm1u",
     "category": "Citrus",
     "name": "Lime Basil & Mandarin Cologne",
     "sku": "sku_313356",
@@ -12,7 +12,7 @@
     "Size":["30ml","50ml","100ml"]
   },
   {
-    "id": "6Bh3pq",
+    "id": "BiJtyTH8aXvhM5FvL1dN",
     "category": "Citrus",
     "name": "Basil & Neroli Cologne",
     "sku": "sku_119140",
@@ -24,7 +24,7 @@
     "Size":["30ml","50ml","100ml"]
   },
   {
-    "id": "VfcByl",
+    "id": "NtAHLNY30qzSYkPGBXDN",
     "category": "Woody",
     "name": "Dark Amber & Ginger Lily Cologne Intense",
     "sku": "sku_622147",
@@ -36,7 +36,7 @@
     "Size":["30ml","50ml","100ml"]
   },
   {
-    "id": "1yF2Ib",
+    "id": "qtHxc1vAo2Aahp0ufPxL",
     "category": "Fruity",
     "name": "English Pear & Freesia Cologne",
     "sku": "sku_125983",
@@ -48,7 +48,7 @@
     "Size":["30ml","50ml","100ml"]
   },
   {
-    "id": "1tE4nK",
+    "id": "35WPzwtK9Z0B7lj5XrlX",
     "category": "Fruity",
     "name": "Nectarine Blossom & Honey Cologne With Daisy Leaf Lace Design",
     "sku": "sku_313356",
@@ -60,7 +60,7 @@
     "Size":["30ml","50ml","100ml"]
   },
   {
-    "id": "x5m8g3",
+    "id": "3w3pX2DP1FVBrmS8tdvY",
     "category": "Spicy",
     "name": "Nutmeg & Ginger Cologne",
     "sku": "sku_119140",
@@ -72,7 +72,7 @@
     "Size":["30ml","50ml","100ml"]
   },
   {
-    "id": "VfcByl",
+    "id": "rUmXnQlVpHy14byyi13n",
     "category": "Floral",
     "name": "Gardenia & Oud Absolu",
     "sku": "sku_622147",
@@ -84,7 +84,7 @@
     "Size":["30ml","50ml","100ml"]
   },
   {
-    "id": "1yF2Ib",
+    "id": "WNCLHjFqt6AsSHT6y6IJ",
     "category": "Floral",
     "name": "Violet & Amber Absolu",
     "sku": "sku_125983",
@@ -92,10 +92,11 @@
     "image": "https://github.com/tinghui522/react-mid/blob/main/src/img/Floral-Violet.png?raw=true",
     "description": "",
     "currency": "USD",
-    "countInStock": 5
+    "countInStock": 5,
+    "Size":["30ml","50ml","100ml"]
   },
   {
-    "id": "VfcByl",
+    "id": "HyRlSNoL8Dzx7dZDSs7R",
     "category": "Light Floral",
     "name": "Wild Bluebell Cologne Duo",
     "sku": "sku_622147",

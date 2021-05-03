@@ -1,9 +1,9 @@
 import { useState, useContext } from "react";
 import { Badge } from "antd";
+import { Link } from "react-router-dom";
 import { CartIcon } from "./Icons";
 import CartModal from "./CartModal";
 import { StoreContext } from "../store";
-import { Link } from "react-router-dom";
 
 export default function CartSummary() {
 
@@ -18,17 +18,16 @@ export default function CartSummary() {
   return (
     <>
       <Link to="/cart">
-      <nav className="header-cart-summary" >
-        <Badge count={count} size={"small"} style={{ color: 'black', backgroundColor: '#EAE3D8' }}>
-          <CartIcon size={32}/>
-        </Badge>
-      </nav>
+        <nav  className="header-cart-summary" >
+          <Badge count={count} size={"small"} style={{ color: 'black', backgroundColor: '#EAE3D8' }}>
+            <CartIcon size={32}/>
+          </Badge>
+        </nav>
       </Link>
-      
-      {/*<CartModal
+      {/* <CartModal
         isModalVisible={isModalVisible}
         toggleModal={toggleModal}
-      />*/}
+      /> */}
     </>
   );
 }
