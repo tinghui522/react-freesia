@@ -429,6 +429,7 @@ body {
 .cart-name{
   font-size: large;
   margin-left: -5rem;
+  width: 300px;
 }
 .cart-item-content {
   margin-left: 10rem;
@@ -489,6 +490,11 @@ body {
   border-color: #DAD4CA;
   margin-top: 1rem;
   margin-left: 64.3rem;
+}
+.block{
+  background-color: #FEFBF8;
+  width: 100%;
+  height: 80px;
 }
 
 @media (max-width: 992px) {

@@ -5,11 +5,6 @@
        "url": "/"
     },
     {
-       "title": "Feed JSON Page",
-       "name": "FeedJSONPage",
-       "url": "/admin/feed-products"
-    },
-    {
         "title": "Freesia",
         "name": "product",
         "url": "/product" 

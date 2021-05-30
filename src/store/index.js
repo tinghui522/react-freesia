@@ -1,4 +1,5 @@
-import { createContext } from "react";
+import { createContext,useReducer } from "react";
+
 import useReducerWithThunk from "use-reducer-thunk";
 import { 
   SET_PAGE_TITLE,
@@ -19,10 +20,9 @@ let cartItems = localStorage.getItem("cartItems")
 
 
 const initialState = {
-   allProducts: [],
   page: {
     title: "Freesia",
-    products: [],
+    products:[],
   },
   productDetail: {
     product: {},
@@ -32,10 +32,6 @@ const initialState = {
     activeItem: "/",
   },
   cartItems,
-  feedProducts: {
-   loading: false,
-   error: null,
- },
   requestProducts: {
    loading: false,
    error: null,
@@ -95,12 +91,16 @@ function reducer(state, action) {
 }
 
 export function StoreProvider(props) {
-   const [state, dispatch] = useReducerWithThunk(reducer, initialState,"example");
-   const value = { state, dispatch };
-
-   return (
-      <StoreContext.Provider value={value}>
-         {props.children}
-      </StoreContext.Provider>
+   const [state, dispatch] = useReducerWithThunk(
+     reducer,
+     initialState,
+     "example"
    );
-}
+   const value = { state, dispatch };
+ 
+   return (
+     <StoreContext.Provider value={value}>
+       {props.children}
+     </StoreContext.Provider>
+   );
+ }

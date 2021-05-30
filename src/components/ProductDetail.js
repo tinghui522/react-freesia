@@ -1,6 +1,5 @@
-import { useContext } from "react";
-import { Select, Row, Col, Spin } from "antd";
-import { LoadingOutlined } from '@ant-design/icons';
+import { useContext, useState } from "react";
+import { Select, Row, Col, Card} from "antd";
 import AddToCart from "./AddToCart"
 import { StoreContext } from "../store"
 import { setProductDetail } from "../actions";
@@ -8,22 +7,15 @@ import { setProductDetail } from "../actions";
 const { Option } = Select;
 
 function ProductDetail() {
-   const { state: { productDetail: { product, qty,Size }, requestProducts: { loading } }, dispatch } = useContext(StoreContext);
-   const antIcon = <LoadingOutlined style={{ fontSize: 80, color: "#8183ff" }} spin />;
-
+   const { state: { productDetail: { product, qty }, requestProducts: { loading } }, dispatch } = useContext(StoreContext);
+   const [Size, setSize] = useState(product.countInStock > 0 ? product.Size[0] : 0);
+   
    return (
       <content className="content"> 
       <hr className="hr-line-productdetail" />
       <div className="perfume-title-bg">
       </div>
       <p className="perfume-title">PERFUMES</p>
-      <>
-         {loading
-            ? (
-               <div className="spinner-wrap">
-                  <Spin indicator={antIcon} className="spinner" />
-               </div>
-            ) : (
       <Row gutter={[0, 8]}>
          <Col
             lg={{ span: 4, offset: 3 }}
@@ -72,13 +64,13 @@ function ProductDetail() {
                         defaultValue={Size}
                         value={Size}
                         className="select-style"
-                        onChange={val => setProductDetail(dispatch, product.id, val, product.category)}
+                        onChange={val => setSize(val)}
                      >
-                         {/* {[...Array(product.Size).keys()].map((x) => (
+                        {[...Array(product.Size).keys()].map((x) => (
                            <Option value={product.Size[x]}>
                               {product.Size[x]}
                            </Option>
-                        ))}  */}
+                        ))} 
                      </Select>
                   </p>
                </div>
@@ -95,9 +87,6 @@ function ProductDetail() {
             </div>
          </Col>
       </Row>
-      )
-   }
-</>
       <div className="test">
       <hr className="hr-line-productdetail" />
          <p className="test-title">Tasting Notes</p>

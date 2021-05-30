@@ -11,7 +11,11 @@ const { Header ,Content ,Footer} = Layout;
 
 function Perfume({ match }) {
   const { dispatch } = useContext(StoreContext);
-   useEffect(() => setProductDetail(dispatch, match.params.productId, 0), [])
+  
+  useEffect(() => {
+    setProductDetail(dispatch, match.params.productId, 0, match.params.category)
+  }, [])
+  
   return (
     <Layout className="container main-layout">
       <Layout className="bg-gray">

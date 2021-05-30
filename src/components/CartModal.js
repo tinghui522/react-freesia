@@ -1,4 +1,4 @@
-import { Modal, Button, Select } from "antd";
+import { Button, Select } from "antd";
 import { useContext ,useEffect} from "react";
 import { Link } from "react-router-dom";
 import { StoreContext } from "../store"
@@ -6,7 +6,7 @@ import { addCartItem, removeCartItem, setProductDetail } from "../actions";
 
 const { Option } = Select;
 
-export default function CartModal({ isModalVisible, toggleModal }) {
+function CartModal({ isModalVisible, toggleModal }) {
    const { state: { cartItems }, dispatch } = useContext(StoreContext);
    const handleCancel = () => toggleModal(!isModalVisible);
    const getTotalPrice = () => {
@@ -15,23 +15,11 @@ export default function CartModal({ isModalVisible, toggleModal }) {
          : 0;
    }
 
-   // const onAuth = () => {
-   //    const auth = authenticateAnonymously();
-   //    console.log(`auth =`);
-   //    console.log(auth)
-   // }
-
    useEffect(() => {
       localStorage.setItem("cartItems", JSON.stringify(cartItems));
    }, [cartItems])
 
    return (
-      <Modal
-         title="Shopping Bag"
-         visible={isModalVisible}
-         onCancel={handleCancel}
-         footer={null}
-      >
       <>
       <hr className="hr-line-productdetail" />
       <div className="cart-title-bg">
@@ -69,11 +57,10 @@ export default function CartModal({ isModalVisible, toggleModal }) {
                         </Select>
                      </div>
                   
-                  
                      <div className="cart-price">
                         ${item.price * item.qty}    
                      </div>
-                     <div className="cart-item-delete" onClick={()=>removeCartItem(item.id)}>
+                     <div className="cart-item-delete" onClick={()=>removeCartItem(dispatch,item.id)}>
                         x
                      </div>
                      </div>
@@ -87,15 +74,18 @@ export default function CartModal({ isModalVisible, toggleModal }) {
             <div className="cart-total-price">${getTotalPrice()}</div>
          </div>
          <hr className="hr-line-total-btn" />
-         <a href="https://www.ifchic.com/tw/designers/288-jo-malone">
          <Button
             className="cart-modal-btn"
             type="primary"
          >
             <span style={{ marginLeft: 12 }}>CHECK OUT</span>
          </Button>
-         </a>
+         <div className="block">
+
+         </div>
          </>
       //</Modal>
    );
 }
+
+export default CartModal;
