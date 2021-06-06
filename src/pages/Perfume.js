@@ -4,17 +4,18 @@ import NavBar from "../components/NavBar";
 import AppHeader from "../components/Header";
 import AppFooter from "../components/Footer";
 import PerfumeDetail from "../components/PerfumeDetail";
-import { setProductDetail } from "../actions";
 import { StoreContext } from "../store";
+import { getTitle } from "../utils";
+import { setPage } from "../actions";
 
 const { Header ,Content ,Footer} = Layout;
 
-function Perfume({ match }) {
-  const { dispatch } = useContext(StoreContext);
+function Perfume() {
+  const { state: { dispatch } } = useContext(StoreContext);
   
   useEffect(() => {
-    setProductDetail(dispatch, match.params.productId, 0, match.params.category)
-  }, [])
+    const url = window.location.pathname;
+  }, []);
   
   return (
     <Layout className="container main-layout">
@@ -23,7 +24,7 @@ function Perfume({ match }) {
       </Layout>
       <Layout className="bg-gray">
         <Header className="layout-header">
-          <AppHeader title="Freesia" />
+          <AppHeader title="freesia" />
         </Header>
         <Content className="layout-content">
             <PerfumeDetail/>

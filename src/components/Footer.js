@@ -1,7 +1,6 @@
 export default function Footer() {
     return (
         <footer className="footer">
-           
                 <img src="https://github.com/tinghui522/react-mid/blob/main/src/img/footer-word.png?raw=true" className="footerword"/>
                 <div>
                 <p className="footer-topic1">MY ACCOUNT</p>

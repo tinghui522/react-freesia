@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Select, Row, Col, Card} from "antd";
+import { Select, Row, Col} from "antd";
 import AddToCart from "./AddToCart"
 import { StoreContext } from "../store"
 import { setProductDetail } from "../actions";
@@ -7,7 +7,7 @@ import { setProductDetail } from "../actions";
 const { Option } = Select;
 
 function ProductDetail() {
-   const { state: { productDetail: { product, qty }, requestProducts: { loading } }, dispatch } = useContext(StoreContext);
+   const { state: { productDetail: { product, qty} }, dispatch } = useContext(StoreContext);
    const [Size, setSize] = useState(product.countInStock > 0 ? product.Size[0] : 0);
    
    return (
@@ -66,11 +66,11 @@ function ProductDetail() {
                         className="select-style"
                         onChange={val => setSize(val)}
                      >
-                        {[...Array(product.Size).keys()].map((x) => (
+                         {/* {[...Array(product.Size).keys()].map((x) => (
                            <Option value={product.Size[x]}>
                               {product.Size[x]}
                            </Option>
-                        ))} 
+                        ))}  */}
                      </Select>
                   </p>
                </div>

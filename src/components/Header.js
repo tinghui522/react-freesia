@@ -1,16 +1,18 @@
 import { useContext } from "react";
+import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom"
 import { StoreContext } from "../store"
-import { pageContentsSet, activeNavItemSet } from "../actions";
+import { setPage } from "../actions"
 import CartSummary from "./CartSummary";
-import { getJSON } from "../api";
+import UserInfo from "./UserInfo";
 
 export default function Header({title}) {
    const { dispatch } = useContext(StoreContext);
+   const history = useHistory();
+
    const onClickHeader = () => {
-      const json = getJSON("/");
-      pageContentsSet(dispatch, "/",  "Freesia");
-      activeNavItemSet(dispatch, "/");
+      setPage(dispatch, "/",  "NORDIC NEST Shopping Cart");
+    history.push("/");
    };
 
    return (
@@ -21,8 +23,12 @@ export default function Header({title}) {
                <h1 className="header-title" >{title}</h1>
                </Link>
             </div>
-            <CartSummary />   
-         </div>   
+            <div className="header-left">
+
+               <UserInfo style={{marginRight: '25px'}} />
+               <CartSummary />
+            </div>
+        </div>
       </header>
    );
 }

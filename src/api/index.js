@@ -27,25 +27,8 @@ firebase.initializeApp(firebaseConfig);
 const productsCollectionRef = firebase.firestore().collection("products");
 const productsDocRef = productsCollectionRef.doc("json");
 const allProductsCollectionRef = productsDocRef.collection("allProducts");
+const allOrdersCollectionRef = firebase.firestore().collection("allOrders");
 
-export const getJSON = (url) => {
-  switch (url) {
-      case "/products":
-        return products;
-      // case "/perfume":
-      //   return perfume;
-      // case "/bath":
-      //   return bath;
-      // case "/candle":
-      //   return candle;
-      // case "/diffuser":
-      //   return diffuser;
-      // case "/testing":
-      //   return testing;
-      // default:
-      //   return products;
-  }
-};
 
 //REFERENCE AUTH
 const auth = firebase.auth();
@@ -61,30 +44,109 @@ export const getProducts = async (url) => {
   const collectionName = collection.name || "allProducts";
   let jsonProducts = [];
 
-// QUERY PRODUCTS
-let querySnapshot;
-if (collectionName === "allProducts")
-  querySnapshot = await allProductsCollectionRef.get();
-else
-  querySnapshot = await allProductsCollectionRef.where("category", "==", collectionName).get();
-  querySnapshot.forEach((doc) => {
-  jsonProducts.push(doc.data());
-  });
-  return jsonProducts;
+  // QUERY PRODUCTS
+  let querySnapshot;
+  if (collectionName === "allProducts")
+    querySnapshot = await allProductsCollectionRef.get();
+  else
+    querySnapshot = await allProductsCollectionRef.where("category", "==", collectionName).get();
+    querySnapshot.forEach((doc) => {
+    jsonProducts.push(doc.data());
+    });
+    return jsonProducts;
 }
 
 export const PerfumeDetail = () => {
   products.forEach((product) => {
     const docRef = allProductsCollectionRef.doc();
     const id = docRef.id;
+    const user = auth.currentUser._id;
+
     // Store Data for Aggregation Queries
     docRef.set({
       ...product,
+      user,
       id
     });
   })
 }
 
-export const authenticateAnonymously = () => {
-  return firebase.auth().signInAnonymously();
-};
+export const signInWithEmailPassword = async (email, password) => {
+  return await auth.signInWithEmailAndPassword(email, password);
+}
+
+export const registerWithEmailPassword = async (email, password, displayName) => {
+  await auth.createUserWithEmailAndPassword(email, password);
+  const user = auth.currentUser;
+  await user.updateProfile({ displayName })
+  return user;
+}
+
+export const updateUserInfoApi = async (email, password, displayName) => {
+  const user = auth.currentUser;
+  if(displayName)
+    await user.updateProfile({displayName });
+    // 等於{displayName:displayName}
+  if(email)
+    await user.updateEmail(String(email));
+  if(password)
+    await user.updatePassword(password);
+  return user;
+}
+
+export const createOrderApi = async (order) => {
+  const user = auth.currentUser.uid;
+  
+  const orderRef = await allOrdersCollectionRef.doc();
+  const id = orderRef.id;
+  // Store Data for Aggregation Queries
+  await orderRef.set({
+    ...order,
+    id,
+    user
+  });
+  return { ...order, id };
+}
+
+export const getOrderById = async (orderId) => {
+  const doc = await allOrdersCollectionRef.doc(orderId).get();
+  return doc.data()
+}
+// export const  getOrderListByUid =async()=> {
+//   const user = auth.currentUser.uid;
+//   let orderlist = [];
+
+//   // QUERY Orders
+//   const querySnapshot = await allOrdersCollectionRef.where("user", "==", user).get();
+//   querySnapshot.forEach((doc) => {
+//     orderlist.push(doc.data());
+//     console.log(orderlist)
+//   });
+//   return orderlist;
+// }
+
+export const getOrderByUser = async () => {
+  const user = auth.currentUser.uid;
+  let jsonOrders = [];
+
+  // QUERY Orders
+  const querySnapshot = await allOrdersCollectionRef.where("user", "==", user).get();
+  querySnapshot.forEach((doc) => {
+    jsonOrders.push(doc.data());
+    console.log(jsonOrders)
+  });
+  return jsonOrders;
+}
+
+export const signOut = () => {
+  auth.signOut();
+}
+
+export const checkLoginApi = () => {
+  const user = auth.currentUser;
+  if(user){
+    return user.uid? true : false;
+  }else{
+    return false
+  }
+}

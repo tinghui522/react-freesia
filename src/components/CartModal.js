@@ -1,13 +1,14 @@
-import { Button, Select } from "antd";
+import { Modal, Button, Select } from "antd";
 import { useContext ,useEffect} from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { StoreContext } from "../store"
 import { addCartItem, removeCartItem, setProductDetail } from "../actions";
 
 const { Option } = Select;
 
-function CartModal({ isModalVisible, toggleModal }) {
-   const { state: { cartItems }, dispatch } = useContext(StoreContext);
+export default function CartModal({ isModalVisible, toggleModal }) {
+   const { state: { cart: { cartItems } }, dispatch } = useContext(StoreContext);
+   const history = useHistory();
    const handleCancel = () => toggleModal(!isModalVisible);
    const getTotalPrice = () => {
       return (cartItems.length > 0) ?
@@ -15,23 +16,28 @@ function CartModal({ isModalVisible, toggleModal }) {
          : 0;
    }
 
+   const checkoutHandler = () => {
+      handleCancel();
+      history.push("/login?redirect=shipping");
+   }
+
    useEffect(() => {
       localStorage.setItem("cartItems", JSON.stringify(cartItems));
    }, [cartItems])
 
    return (
-      <>
-      <hr className="hr-line-productdetail" />
-      <div className="cart-title-bg">
-       <p className="cart-title">Shopping Bag</p>
-      </div>
-      <div className="cart-detail">
+      <Modal
+         title="Shopping Bag"
+         visible={isModalVisible}
+         onCancel={handleCancel}
+         footer={null}
+      >
          {cartItems.length === 0 ? (
             <div>Cart is empty</div>
          ) : (
             cartItems.map(item => (
                <li key={item.id} className="cart-item">
-                  <Link to={`/product/${item.id}`}>
+                  <Link to={`/product/${item.category}/${item.id}`}>
                      <div className="cart-image" onClick={()=>{
                         setProductDetail(dispatch, item.id, item.qty);
                         handleCancel();
@@ -60,14 +66,13 @@ function CartModal({ isModalVisible, toggleModal }) {
                      <div className="cart-price">
                         ${item.price * item.qty}    
                      </div>
-                     <div className="cart-item-delete" onClick={()=>removeCartItem(dispatch,item.id)}>
+                     <div className="cart-item-delete" onClick={() => removeCartItem(dispatch,item.id)}>
                         x
                      </div>
-                     </div>
+                  </div>
                </li>
             ))
          )}
-         </div>
          <hr className="hr-line-total" />
          <div className="cart-total-price-wrap">
            TOTAL：
@@ -77,15 +82,13 @@ function CartModal({ isModalVisible, toggleModal }) {
          <Button
             className="cart-modal-btn"
             type="primary"
+            onClick={checkoutHandler}
          >
             <span style={{ marginLeft: 12 }}>CHECK OUT</span>
          </Button>
          <div className="block">
 
          </div>
-         </>
-      //</Modal>
+      </Modal>
    );
 }
-
-export default CartModal;

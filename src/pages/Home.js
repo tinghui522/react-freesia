@@ -7,8 +7,7 @@ import AppFooter from "../components/Footer";
 import Categoties from "../components/Categories";
 import { StoreContext } from "../store";
 import { getTitle } from "../utils";
-import { pageContentsSet, activeNavItemSet } from "../actions";
-import { getJSON } from "../api";
+import { setPage } from "../actions";
 
 const { Header ,Content ,Footer} = Layout;
 
@@ -17,8 +16,7 @@ function Home() {
 
   useEffect(() => {
     const url = window.location.pathname;
-    pageContentsSet(dispatch, getTitle(url), getJSON(url));
-    activeNavItemSet(dispatch, url);
+    setPage(dispatch, url, getTitle(url))
   }, []);// eslint-disable-line react-hooks/exhaustive-deps   
   return (
     <Layout className="container main-layout">

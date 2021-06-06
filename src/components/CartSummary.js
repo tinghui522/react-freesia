@@ -1,13 +1,12 @@
 import { useState, useContext } from "react";
 import { Badge } from "antd";
 import { Link } from "react-router-dom";
-import CartModal from "./CartModal";
 import { CartIcon } from "./Icons";
+import CartModal from "./CartModal";
 import { StoreContext } from "../store";
 
 export default function CartSummary() {
-
-  const { state: { cartItems } } = useContext(StoreContext);
+  const { state: { cart: { cartItems } } } = useContext(StoreContext);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const toggleModal = () => setIsModalVisible(!isModalVisible);
 
@@ -18,14 +17,14 @@ export default function CartSummary() {
   return (
     <>
       <Link to="/cart">
-        <nav  className="header-cart-summary" >
+        <nav className="header-cart-summary" >
           <Badge count={count} size={"small"} style={{ color: 'black', backgroundColor: '#EAE3D8' }}>
             <CartIcon size={32}/>
           </Badge>
         </nav>
       </Link>
       
-      {/* <CartModal
+      {/*<CartModal
         isModalVisible={isModalVisible}
         toggleModal={toggleModal}
       /> */}

@@ -10,39 +10,39 @@
 }
 
 /* sm */
-@media (max-width: 425px) { 
+@media (min-width: 414px) { 
   .container {
     width: 100%;
   }
 } 
 
 /* md */
-/*@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .container {
     width: 720px;
   }
-} */
+}  */
 
 /* lg */
-/*@media (min-width: 992px) {
+/* @media (min-width: 992px) {
   .container {
     width: 960px;
   }
 } */
 
 /* xl */
-/*@media (min-width: 1200px) {
+/* @media (min-width: 1200px) {
   .container {
     width: 1140px;
   }
 } */
 
 /* xxl */
-/*@media (min-width: 1600px) {
+/* @media (min-width: 1600px) {
   .container {
     width: 1500px;
   }
-} */
+}   */
 
 /*fixweb*/
 .fixweb-img{
@@ -69,6 +69,28 @@ body {
   margin: 0 auto;
   max-width: 1200px;
   padding: 0 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.primary-google-btn {
+  margin-top: 1rem;
+}
+
+.primary-btn {
+  margin-top: 1rem;
+  border-color: #6366F2;
+  background-color: #6366F2;
+}
+
+.primary-btn:hover {
+  border-color: #8183ff;
+  background-color: #8183ff;
 }
 
 .layout-header{
@@ -148,8 +170,12 @@ body {
 
 .header-cart-summary {
   position: absolute;
-  right: 1.8rem;
+  right: 2rem;
   cursor: pointer;
+}
+
+.header-cart-summary:hover{
+  opacity: 0.5;
 }
 
 .home-detail{
@@ -302,21 +328,21 @@ body {
   margin-top: 10rem;
   }
 
-.detailpic{
-  width:70%;
-  margin-top: -28rem;
-  margin-left: 50rem;
-}
+  .detailpic{
+    width:70%;
+    margin-top: -28rem;
+    margin-left: 50rem;
+  }
 
-.categories-color{
-  width: 100%;
-}
+  .categories-color{
+    width: 100%;
+  }
 
-.categories-word{
-  width:15%;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
+  .categories-word{
+    width:15%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
 
 } 
 
@@ -374,10 +400,16 @@ body {
   margin-left: 10rem;
 }
 .cart-summary-text {
-  color: #4D4D4D;
+  color: #4d4d4d;
   font-size: 0.8rem;
-  opacity: 0.6;
-  margin-top: -4px;
+  margin-top: 2px;
+}
+
+.cart-summary-text1 {
+  color: #4d4d4d;
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  margin-right: 1.5rem;
 }
 
 .ant-modal-title {
@@ -542,10 +574,6 @@ body {
 }
 
 @media (max-width: 1920px) {
-  .collapse-mobile {
-    transform: translateX(-100%);
-  }
-
   .nav-bar {
     background-color: #fff;
     position: absolute;
@@ -560,10 +588,6 @@ body {
     width: 50%;
   }
 
-  .collapse-mobile-wrap {
-    display: none;
-  }
-
   .nav-bar-wrap {
     background-color: #fff;
     opacity: 0.6;
@@ -574,16 +598,6 @@ body {
   }
 
 }
-/*.hr-header-line {
-  margin: 25px auto 30px;
-  padding: 0;
-  width: 100px;
-  border: 0;
-  border-top: solid 6px;
-  border-color: #6366F2;
-  border-radius: 50%;
-  opacity: 1;
-}*/
 
 /* Hamburger Menu */
 .ham-menu {
@@ -789,7 +803,6 @@ span.ham-menu-bar3--touch {
   border: 0;
   border-top: solid 2px;
   border-color: #DAD4CA;
-  margin-top: -0.4rem;
 }
 
 .backcolor-product-category1{
@@ -1083,6 +1096,212 @@ span.ham-menu-bar3--touch {
   height: 26px;
 }
 
+/*Login*/
+.ant-checkbox-checked .ant-checkbox-inner{
+  background-color: #DAD4CA;
+  border-color: #DAD4CA;
+}
+
+.login-form-wrapper{
+  width: 100%;
+  background-color: #FEFBF8;
+}
+
+.login-email{
+  width: 30vw;
+  margin: 3rem 35vw 1rem;
+
+}
+.login-password{
+  width: 30vw;
+  margin: 2rem 35vw 1rem;
+}
+.remember{
+  margin-left: 35vw;
+  margin-right: 2rem;
+  color: #707070;
+}
+.login-enter{
+  width: 30vw;
+  margin: 1rem 35vw 1rem;
+  text-align: center;
+  color: #4d4d4d;
+}
+.login-form__button{
+  margin-top: 2rem;
+}
+.login-or{
+  color: #4d4d4d;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/*Register*/
+.register-form .ant-form-item{
+  color: #4d4d4d;
+}
+.ant-form-item-label > label{
+  color: #4d4d4d;
+}
+.register-form-wrapper {
+  width: 100%;
+} 
+.register-form-wrapper .ant-input{
+  width: 30vw;
+} 
+.register-form-wrapper .ant-input-password{
+  width: 30vw;
+} 
+.agreement{
+  width: 15rem;
+  position: relative;
+  margin: auto;
+}
+.agreement span{
+  color: #4d4d4d;
+}
+.register-enter{
+  width: 30vw;
+  margin: 2rem 33vw 1rem;
+  text-align: center;
+}
+.register-space{
+  margin-bottom: 1rem;
+}
+
+/*Profile*/
+.profile-nav-wrapper{
+  position: absolute;
+  width: 30vw;
+  height: 100vh;
+}
+.profile-img-box{
+  position: relative;
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 3rem 10vw 1rem;
+  overflow: hidden;
+}
+.profile-img{
+  position: absolute;
+  width: 10vw;
+}
+.profile-name{
+  font-size: 1.2rem;
+  text-align: center;
+  width: 25vw;
+  margin: 1rem 2.5vw 1rem;
+}
+.profile-nav{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 25vw;
+  margin: 3rem 2.5vw 1rem;
+}
+.profile-nav-item{
+  font-size: 1.2rem;
+  color: #573D2D;
+  margin-bottom: 1rem;
+}
+.profile-form-wrapper{
+  position: absolute;
+  right: 0;
+  width: 70vw;
+  height: 100vh;
+  background-color: #fff;
+}
+.profile-title{
+  font-size: 1.2rem;
+  color: #573D2D;
+  width: calc(1.2rem * 4);
+  height: 5rem;
+  margin: 1rem;
+  text-align: center;
+}
+.profile-form{
+  width: 30vw;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+.profile-btn-wrapper{
+  width: 12rem;
+  margin: 3rem auto;
+}
+.profile-form__button{
+  margin: 1rem;
+}
+
+/* Checkout Steps */
+.checkout-steps {
+  font-size: 0.6rem;
+  width: 80%;
+  margin-bottom: 2rem;
+}
+.checkout-steps > div {
+  border-top: 0.3rem #c0c0c0 solid;
+  color: #c0c0c0;
+  flex: 1;
+  padding: 0.2rem;
+  font-weight: bold;
+}
+.checkout-steps > div.active {
+  border-top-color: #6366F2;
+  color: #6366F2;
+}
+
+/* PlaceOrder / Order Card */
+.card {
+  border: 0.1rem #c0c0c0 solid;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+.card-body {
+  padding: 1rem;
+}
+.orderSearch_btn{
+  width:100%;
+  background-color: #6ded6d;
+  color: #fff;
+}
+.orderSearch_btn:hover{
+  background-color: #79e079;
+  border-color: #79e079;
+  color: #fff;
+}
+.orderSearch_btn:focus{
+  background-color: #79e079;
+  border-color: #79e079;
+  color: #fff;
+}
+
+.profile_cont{
+  display: flex;
+  flex-direction: column;
+ 
+}
+.profileOrder{
+
+  margin-bottom: 5rem;
+}
+.Order_title{
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Order_title p{
+  font-size: 2rem;
+}
+.orderlist_empty{
+  font-size: 3rem;
+  
+}
+
 @media (min-width: 992px) {
   .product-image {
     height: 24rem;
@@ -1155,7 +1374,6 @@ span.ham-menu-bar3--touch {
   /* Header */
   .bigpic{
     width: 100%;
-    margin-top: 0rem;
   }
 
   .header-title {
@@ -1171,6 +1389,9 @@ span.ham-menu-bar3--touch {
     margin-right: 1rem;
     margin-top: 0rem;
   }
+
+
+
 /*categories rwd*/
   .home-detail{
     width:100%;
