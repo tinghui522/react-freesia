@@ -20,7 +20,7 @@ function Cart({ match }) {
       </Layout>
       <Layout className="bg-gray">
         <Header className="layout-header">
-          <AppHeader title="Shopping bag" /> 
+          <AppHeader title="Shopping Bag" /> 
         </Header>
         <Content className="layout-content">
           <CartModal />

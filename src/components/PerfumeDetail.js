@@ -1,24 +1,31 @@
 import products from "../json/products.json"
-import { Row, Col } from "antd";
+import { Row, Col, Button } from "antd";
 import ProductItem from "./ProductItem";
-import { useContext } from "react";
-import { StoreContext } from "../store"
+import { useContext, useRef } from "react";
+import { StoreContext } from "../store";
+import { Link } from "react-router-dom";
 
 
 export default function PerfumeDetail() {
     const { dispatch } = useContext(StoreContext);
+    const myRef = useRef<HTMLDivElement>(null);
+    const next = () => {
+        window.scrollBy(0,720);
+      }
     return (
         <content className="content"> 
         <hr className="hr-line-productdetail" />
         <div className="perfume-title-bg">
         </div>
-        <p className="perfume-title">PERFUMES</p>
+        <Link to="/Perfume">
+         <p className="perfume-title">PERFUMES</p>
+        </Link>
         <div className="perfume-detail">
             <img src="https://github.com/tinghui522/react-mid/blob/main/src/img/product-word.png?raw=true" className="product-word"/>
             <img src="https://github.com/tinghui522/react-mid/blob/main/src/img/jo-malone-london-blossoms-yuja-cologne.png?raw=true" className="product-img" />
-            
-            <img src="https://github.com/tinghui522/react-mid/blob/main/src/img/up-arrow.png?raw=true"className="arrow-icon"/>
-            
+            <Button type="text" onClick={next}>
+                <img src="https://github.com/tinghui522/react-mid/blob/main/src/img/up-arrow.png?raw=true"className="arrow-icon"/>
+            </Button>
         </div>
         <div>
         <Row gutter={[0,8]}>
