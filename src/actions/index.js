@@ -47,10 +47,9 @@ import {
   getOrderByUser 
 } from "../api";
 
-export const addCartItem = (dispatch, product, qty,Size) => {
+export const addCartItem = (dispatch, product, qty, Size) => {
   const item = {
     id: product.id,
-    category: product.category,
     name: product.name,
     image: product.image,
     price: product.price,

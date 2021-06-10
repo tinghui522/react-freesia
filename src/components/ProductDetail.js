@@ -3,6 +3,7 @@ import { Select, Row, Col} from "antd";
 import AddToCart from "./AddToCart"
 import { StoreContext } from "../store"
 import { setProductDetail } from "../actions";
+import { Link } from "react-router-dom";
 
 const { Option } = Select;
 
@@ -15,7 +16,9 @@ function ProductDetail() {
       <hr className="hr-line-productdetail" />
       <div className="perfume-title-bg">
       </div>
-      <p className="perfume-title">PERFUMES</p>
+      <Link to="/Perfume">
+         <p className="perfume-title">PERFUMES</p>
+      </Link>
       <Row gutter={[0, 8]}>
          <Col
             lg={{ span: 4, offset: 3 }}
@@ -47,7 +50,6 @@ function ProductDetail() {
                      Qty: {"   "}
                      <Select 
                         defaultValue={qty}
-                        value={qty} 
                         className="select-style"
                         onChange={val => setProductDetail(dispatch, product.id, val, product.category)}
                      >
@@ -62,15 +64,14 @@ function ProductDetail() {
                      Size: {"   "}
                      <Select
                         defaultValue={Size}
-                        value={Size}
                         className="select-style"
                         onChange={val => setSize(val)}
                      >
-                         {/* {[...Array(product.Size).keys()].map((x) => (
+                        {[...Array(product.Size.length).keys()].map((x) => (
                            <Option value={product.Size[x]}>
                               {product.Size[x]}
                            </Option>
-                        ))}  */}
+                        ))}
                      </Select>
                   </p>
                </div>

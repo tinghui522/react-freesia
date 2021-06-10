@@ -11,7 +11,7 @@ export default function Header({title}) {
    const history = useHistory();
 
    const onClickHeader = () => {
-      setPage(dispatch, "/",  "NORDIC NEST Shopping Cart");
+      setPage(dispatch, "/",  "Freesia");
     history.push("/");
    };
 

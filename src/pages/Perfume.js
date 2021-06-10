@@ -24,7 +24,7 @@ function Perfume() {
       </Layout>
       <Layout className="bg-gray">
         <Header className="layout-header">
-          <AppHeader title="freesia" />
+          <AppHeader title="Freesia" />
         </Header>
         <Content className="layout-content">
             <PerfumeDetail/>
