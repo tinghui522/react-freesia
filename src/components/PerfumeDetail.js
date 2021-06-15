@@ -27,7 +27,7 @@ export default function PerfumeDetail() {
             </Button>
         </div>
         <div>
-        <div className="product-title-bg"></div>
+        <div className="product-title-bg1"></div>
             <p className="product-title">PRODUCTS</p>
         <Row gutter={[0,8]}>
             {products.map(product => (
