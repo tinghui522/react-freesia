@@ -1,6 +1,6 @@
 import { Layout } from "antd";
 import * as QueryString from "query-string";
-
+import NavBar from "../components/NavBar";
 import AppHeader from "../components/Header";
 import AppFooter from "../components/Footer";
 import RegisterCard from "../components/RegisterCard";
@@ -11,6 +11,9 @@ function Register(props) {
   const { redirect } = QueryString.parse(props.location.search);
   return (
     <Layout className="container main-layout">
+      <Layout className="bg-gray">
+        <NavBar />
+      </Layout>
       <Layout className="bg-gray main-area">
         <Header className="layout-header">
           <AppHeader title="Register" />

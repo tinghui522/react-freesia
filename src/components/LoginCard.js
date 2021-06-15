@@ -105,7 +105,7 @@ const LoginCard = ({ redirect }) => {
           </Button>
         )}
         <div className="login-or">or</div>
-        Don't have account?<Link to={"/register?redirect=shipping"}>register now!</Link>
+        Don't have account?<Link to={"/register?redirect=shipping"} className="login-form__register">register now!</Link>
         {error === "" ? (
           <></>
         ) : (

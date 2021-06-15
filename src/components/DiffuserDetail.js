@@ -1,4 +1,4 @@
-import products from "../json/products.json"
+import products from "../json/diffuser.json"
 import { Row, Col, Button } from "antd";
 import ProductItem from "./ProductItem";
 import { useContext, useRef } from "react";
@@ -19,7 +19,17 @@ export default function DiffuserDetail() {
         <Link to="/Bath">
          <p className="perfume-title">DIFFUSER</p>
         </Link>
-            <img src="https://github.com/tinghui522/react-freesia/blob/master/src/img/img_diffuserBanner.png?raw=true" className="product-bg"/>    
+        <div className="product-bg">
+            <div>
+            <img src="https://github.com/tinghui522/react-freesia/blob/master/src/img/img_diffuserBanner.png?raw=true" className="product-bg"/>
+            </div>
+            <div>
+            <img src="https://github.com/tinghui522/react-freesia/blob/master/src/img/img_diffuserBanner2.png?raw=true" className="product-bg"/>
+            </div>
+            <div>
+            <img src="https://github.com/tinghui522/react-freesia/blob/master/src/img/img_diffuserBanner3.png?raw=true" className="product-bg"/>
+            </div>
+        </div>   
         <div>
         <div className="product-title-bg"></div>
             <p className="product-title">PRODUCTS</p>

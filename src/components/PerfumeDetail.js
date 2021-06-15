@@ -1,4 +1,4 @@
-import products from "../json/products.json"
+import products from "../json/perfume.json"
 import { Row, Col, Button } from "antd";
 import ProductItem from "./ProductItem";
 import { useContext, useRef } from "react";
@@ -27,6 +27,8 @@ export default function PerfumeDetail() {
             </Button>
         </div>
         <div>
+        <div className="product-title-bg"></div>
+            <p className="product-title">PRODUCTS</p>
         <Row gutter={[0,8]}>
             {products.map(product => (
                 <Col 

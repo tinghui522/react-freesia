@@ -5,11 +5,23 @@ import "firebase/auth";
 import jsonInfo from "../json/jsonInfo.json";
 import products from "../json/products.json";
 
-// import perfume from "../json/perfume.json";
-// import bath from "../json/bath.json";
-// import candle from "../json/candle.json";
-// import diffuser from "../json/diffuser.json";
-// import testing from "../json/testing.json";
+import perfume from "../json/perfume.json";
+import bath from "../json/bath.json";
+import candle from "../json/candle.json";
+import diffuser from "../json/diffuser.json";
+
+export const getJSON = (url) => {
+  switch (url) {
+    case "/perfume":
+      return perfume;
+    case "/bath":
+      return bath;
+    case "/candle":
+      return candle;
+    case "/diffuser":
+      return diffuser;
+  }
+};
 
 // INITIALIZE FIREBASE
 const firebaseConfig = {
@@ -36,6 +48,7 @@ const auth = firebase.auth();
 export const getProductById = async (productId) => {
   // REFERENCE PRODUCTS COLLECTION
   const doc = await allProductsCollectionRef.doc(productId).get();
+  
   return doc.data()
 }
 
@@ -59,6 +72,51 @@ export const getProducts = async (url) => {
 export const PerfumeDetail = () => {
   products.forEach((product) => {
     const docRef = allProductsCollectionRef.doc();
+    const id = docRef.id;
+    const user = auth.currentUser._id;
+
+    // Store Data for Aggregation Queries
+    docRef.set({
+      ...product,
+      user,
+      id
+    });
+  })
+}
+
+export const BathBodyDetail = () => {
+  products.forEach((product) => {
+    const docRef = bath.doc();
+    const id = docRef.id;
+    const user = auth.currentUser._id;
+
+    // Store Data for Aggregation Queries
+    docRef.set({
+      ...product,
+      user,
+      id
+    });
+  })
+}
+
+export const CandleDetail = () => {
+  products.forEach((product) => {
+    const docRef = candle.doc();
+    const id = docRef.id;
+    const user = auth.currentUser._id;
+
+    // Store Data for Aggregation Queries
+    docRef.set({
+      ...product,
+      user,
+      id
+    });
+  })
+}
+
+export const DiffuserDetail = () => {
+  products.forEach((product) => {
+    const docRef = diffuser.doc();
     const id = docRef.id;
     const user = auth.currentUser._id;
 

@@ -220,7 +220,6 @@ body {
   transform: scale(1.05);
 }
 
-
 .categories-img2{
   width:28%;
   margin-top: -53.2rem;
@@ -754,7 +753,9 @@ span.ham-menu-bar3--touch {
   height: 25px;
   background-color: #EAE3D8;
   margin-left: 41.5vw;
-  margin-top: 10rem;
+  margin-top: 40rem;
+  border-radius: 20px;
+  border: #EAE3D8;
 }
 
 .product-title{
@@ -775,6 +776,67 @@ margin-top: 2rem;
   width: 100%;
   margin-top: 30px;
 }
+
+/*動畫*/
+.product-bg div {
+  position: absolute;
+  z-index:0;
+  opacity: 0;
+  top:25vh;
+  filter: alpha(opacity=0);
+  -webkit-animation: round 21s linear infinite;
+          animation: round 21s linear infinite;
+  }
+  
+  @-webkit-keyframes round {
+  5% {
+      opacity: 1;
+      filter: alpha(opacity=100);
+      /* 0 - 1秒 淡入*/
+  }
+  25% {
+      opacity: 1;
+      filter: alpha(opacity=100);
+      /* 1- 5秒靜止*/
+  }
+  30% {
+      opacity: 0;
+      filter: alpha(opacity=0);
+      /* 5-6秒淡出*/
+  }
+  }
+  @keyframes round {
+  5% {
+      opacity: 1;
+      filter: alpha(opacity=100);
+      /* 0 - 1秒 淡入*/
+  }
+  25% {
+      opacity: 1;
+      filter: alpha(opacity=100);
+      /* 1- 5秒靜止*/
+  }
+  30% {
+      opacity: 0;
+      filter: alpha(opacity=0);
+      /* 5-6秒淡出*/
+  }
+  }
+  
+  .product-bg div:nth-child(3) {
+  -webkit-animation-delay: 14s;
+          animation-delay: 14s;
+  }
+  
+  .product-bg div:nth-child(2) {
+  -webkit-animation-delay: 7s;
+          animation-delay: 7s;
+  }
+  
+  .product-bg div:nth-child(1) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  }
 
 .product-img{
   width:60%;
@@ -1145,7 +1207,6 @@ margin-top: 2rem;
 .login-email{
   width: 30vw;
   margin: 3rem 35vw 1rem;
-
 }
 .login-password{
   width: 30vw;
@@ -1164,6 +1225,24 @@ margin-top: 2rem;
 }
 .login-form__button{
   margin-top: 2rem;
+  background-color: #4D4D4D;
+  border-radius: 10px;
+  border-color: #4D4D4D;
+}
+.login-form__forgot{
+  color: #CCB592;
+  margin-left: 12rem;
+}
+.login-form__forgot:hover{
+  color: #CCB592;
+}
+
+.login-form__register{
+  color: #CCB592;
+  margin-left: 1rem;
+}
+.login-form__register:hover{
+  color: #CCB592;
 }
 .login-or{
   color: #4d4d4d;
@@ -1180,9 +1259,11 @@ margin-top: 2rem;
 }
 .register-form-wrapper {
   width: 100%;
+  margin-bottom: 2rem;
 } 
 .register-form-wrapper .ant-input{
   width: 30vw;
+  
 } 
 .register-form-wrapper .ant-input-password{
   width: 30vw;
@@ -1195,10 +1276,21 @@ margin-top: 2rem;
 .agreement span{
   color: #4d4d4d;
 }
+.register-agree{
+  color: #CCB592;
+}
+.register-agree:hover{
+  color: #CCB592;
+}
 .register-enter{
   width: 30vw;
-  margin: 2rem 33vw 1rem;
+  margin: 0rem 33vw 1rem;
   text-align: center;
+}
+.register-form__button{
+  background-color: #4D4D4D;
+  border-radius: 10px;
+  border-color: #4D4D4D;
 }
 .register-space{
   margin-bottom: 1rem;
@@ -1218,8 +1310,29 @@ margin-top: 2rem;
   width: 20%;
   margin: 3rem auto;
 }
-.profile-form__button{
+.profile-form__button1{
+  background-color: #CCB592;
+  border-radius: 10px;
+  border-color: #CCB592;
+  margin-left: 11rem;
+}
+.profile-form__button1:hover{
+  background-color: #CCB592;
+  border-radius: 10px;
+  border-color: #CCB592;
+}
+.profile-form__button2{
   margin: 1rem;
+  background-color: #EAE3D8;
+  border-radius: 10px;
+  border-color: #EAE3D8;
+  color: #4D4D4D;
+}
+.profile-form__button2:hover{
+  background-color: #EAE3D8;
+  border-radius: 10px;
+  border-color: #EAE3D8;
+  color: #4D4D4D;
 }
 
 /* Checkout Steps */
@@ -1251,18 +1364,22 @@ margin-top: 2rem;
   padding: 1rem;
 }
 .orderSearch_btn{
-  width:20%;
-  background-color: #6ded6d;
+  width: 11rem;
+  background-color: #4D4D4D;
   color: #fff;
+  border-radius: 10px;
+  border-color: #4D4D4D;
+  margin-top: -5px;
+  margin-left: 43.3vw;
 }
 .orderSearch_btn:hover{
-  background-color: #79e079;
-  border-color: #79e079;
+  background-color: #4D4D4D;
+  border-color: #4D4D4D;
   color: #fff;
 }
 .orderSearch_btn:focus{
-  background-color: #79e079;
-  border-color: #79e079;
+  background-color: #4D4D4D;
+  border-color: #4D4D4D;
   color: #fff;
 }
 
@@ -1287,7 +1404,7 @@ margin-top: 2rem;
   font-size: 3rem;
 }
 .eachOrder_title{
-  font-size: 5rem;
+  font-size: 2rem;
   margin-left: 35vw;
 }
 

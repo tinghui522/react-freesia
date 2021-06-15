@@ -1,4 +1,4 @@
-import products from "../json/products.json"
+import products from "../json/candle.json"
 import { Row, Col, Button } from "antd";
 import ProductItem from "./ProductItem";
 import { useContext, useRef } from "react";
@@ -17,9 +17,19 @@ export default function CandleDetail() {
         <div className="perfume-title-bg">
         </div>
         <Link to="/Bath">
-         <p className="perfume-title">Candle</p>
+         <p className="perfume-title">CANDLES</p>
         </Link>
-            <img src="https://github.com/tinghui522/react-freesia/blob/master/src/img/img_candleBanner.png?raw=true" className="product-bg"/>    
+        <div className="product-bg">
+            <div>
+            <img src="https://github.com/tinghui522/react-freesia/blob/master/src/img/img_candleBanner.png?raw=true" className="product-bg"/>
+            </div>
+            <div>
+            <img src="https://github.com/tinghui522/react-freesia/blob/master/src/img/img_candleBanner2.png?raw=true" className="product-bg"/>
+            </div>
+            <div>
+            <img src="https://github.com/tinghui522/react-freesia/blob/master/src/img/img_candleBanner3.png?raw=true" className="product-bg"/> 
+            </div>
+        </div>   
         <div>
         <div className="product-title-bg"></div>
             <p className="product-title">PRODUCTS</p>

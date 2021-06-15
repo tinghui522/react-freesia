@@ -113,35 +113,31 @@ loading,
       >
         <Input.Password />
       </Form.Item>
-
       <Form.Item>
         <Button
           type="primary"
           htmlType="submit"
-          className="profile-form__button"
+          className="profile-form__button1"
         >
           Submit
         </Button>
-
         <Button
-          type="danger"
           style={{ marginTop: "0.8rem" }}
-          className="profile-form__button"
+          className="profile-form__button2"
           onClick={handleLogout}
         >
           Log out
         </Button>
-        <Button
-          type="warning"
-          style={{ marginTop: "0.8rem" }}
-          className="orderSearch_btn"
-          onClick={handleOrderSearch}
-        >
-          Order List
-        </Button>
+        
       </Form.Item>
     </Form>
    <div class="profileOrder">
+          <Button
+            className="orderSearch_btn"
+            onClick={handleOrderSearch}
+          >
+            Order List
+          </Button>
    { tapOrNot?(loading
             ? (
                <div className="spinner-wrap">
