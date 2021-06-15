@@ -16,7 +16,7 @@ loading,
   const { displayName, email } = userInfo;
   const history = useHistory();
   const [form] = Form.useForm();
-  const antIcon = <LoadingOutlined style={{ fontSize: 80, color: "#8183ff" }} spin />;
+  const antIcon = <LoadingOutlined style={{ fontSize: 80, color: "#8183ff",justifyContent: 'center',alignContent:'center' }} spin />;
   const handleUpdate = (values) => {
     console.log(values)
     updateUserInfo(dispatch, values);
@@ -34,14 +34,16 @@ loading,
   
 
   return (
-    <div className="profile_cont">
+    <div className="profile-form-wrapper">
+      <hr className="hr-line-productdetail" />
     <Form
       onFinish={handleUpdate}
       name="normal_login"
-      className="login-form"
+      className="profile-form"
       form={form}
       initialValues={userInfo}
     >
+      
       <Form.Item
         label="name: "
         name="name"
@@ -111,35 +113,31 @@ loading,
       >
         <Input.Password />
       </Form.Item>
-
       <Form.Item>
         <Button
           type="primary"
           htmlType="submit"
-          className="login-form__button"
+          className="profile-form__button1"
         >
           Submit
         </Button>
-
         <Button
-          type="danger"
           style={{ marginTop: "0.8rem" }}
-          className="login-form__button"
+          className="profile-form__button2"
           onClick={handleLogout}
         >
           Log out
         </Button>
-        <Button
-          type="warning"
-          style={{ marginTop: "0.8rem" }}
-          className="orderSearch_btn"
-          onClick={handleOrderSearch}
-        >
-          Order List
-        </Button>
+        
       </Form.Item>
     </Form>
    <div class="profileOrder">
+          <Button
+            className="orderSearch_btn"
+            onClick={handleOrderSearch}
+          >
+            Order List
+          </Button>
    { tapOrNot?(loading
             ? (
                <div className="spinner-wrap">

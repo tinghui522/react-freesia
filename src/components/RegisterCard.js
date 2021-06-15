@@ -146,7 +146,7 @@ const RegisterCard = ({ redirect }) => {
           {...tailFormItemLayout}
         >
           <Checkbox>
-            I have read the <Link to={"/"}>agreement</Link>
+            I have read the <Link to={"/"} className="register-agree">agreement</Link>
           </Checkbox>
         </Form.Item>
         </div>
@@ -174,7 +174,7 @@ const RegisterCard = ({ redirect }) => {
           )}
           <div className="register-space"></div>
           Already have an account?{" "}
-          <Link to={"/login?redirect=shipping"}>Login</Link>
+          <Link to={"/login?redirect=shipping"} className="register-agree">Login</Link>
           {error === "" ? (
             <></>
           ) : (

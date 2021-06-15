@@ -8,7 +8,6 @@ import { StoreContext } from "../store";
 export default function CartSummary() {
   const { state: { cart: { cartItems } } } = useContext(StoreContext);
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const toggleModal = () => setIsModalVisible(!isModalVisible);
 
   const count = (cartItems.length > 0) ?
     cartItems.reduce((sum, item) => sum + item.qty, 0)

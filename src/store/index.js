@@ -78,6 +78,7 @@ const initialState = {
   productDetail: {
     product: {},
     qty: 1,
+    Size: [],
   },
   navBar: {
     activeItem: "/",

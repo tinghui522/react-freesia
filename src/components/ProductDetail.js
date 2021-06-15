@@ -9,15 +9,15 @@ const { Option } = Select;
 
 function ProductDetail() {
    const { state: { productDetail: { product, qty} }, dispatch } = useContext(StoreContext);
-   const [Size, setSize] = useState(product.countInStock > 0 ? product.Size[0] : 0);
+   //const [Size, setSize] = useState(product.countInStock > 0 ? product.Size[0] : 0);
    
    return (
       <content className="content"> 
       <hr className="hr-line-productdetail" />
       <div className="perfume-title-bg">
       </div>
-      <Link to="/Perfume">
-         <p className="perfume-title">PERFUMES</p>
+      <Link to="/">
+         <p className="perfume-title">{product.title}</p>
       </Link>
       <Row gutter={[0, 8]}>
          <Col
@@ -50,6 +50,7 @@ function ProductDetail() {
                      Qty: {"   "}
                      <Select 
                         defaultValue={qty}
+                        value={qty}
                         className="select-style"
                         onChange={val => setProductDetail(dispatch, product.id, val, product.category)}
                      >
@@ -62,17 +63,17 @@ function ProductDetail() {
                   </p>
                   <p className="product-size">
                      Size: {"   "}
-                     <Select
+                     {/* <Select
                         defaultValue={Size}
                         className="select-style"
                         onChange={val => setSize(val)}
                      >
-                        {[...Array(product.Size.length).keys()].map((x) => (
+                         {[...Array(product.Size).length()].map((x) => (
                            <Option value={product.Size[x]}>
                               {product.Size[x]}
                            </Option>
-                        ))}
-                     </Select>
+                        ))}  
+                     </Select> */}
                   </p>
                </div>
                <hr className="hr-line-productdetail3" />
@@ -84,7 +85,7 @@ function ProductDetail() {
                   ${product.price}.00
                   </p>
                </div>
-               <AddToCart product={product} Size={Size} qty={qty}/>
+               <AddToCart product={product}  qty={qty}/>
             </div>
          </Col>
       </Row>

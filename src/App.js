@@ -12,6 +12,9 @@ import Shipping from './pages/Shipping'
 import Payment from './pages/Payment'
 import PlaceOrder from './pages/PlaceOrder'
 import Order from './pages/Order'
+import Bath from './pages/Bath'
+import Candle from './pages/Candle'
+import Diffuser from './pages/Diffuser'
 
 import { StoreProvider } from "./store";
 
@@ -23,6 +26,9 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/cart" component={Cart}/>
           <Route path="/perfume" component={Perfume}/>
+          <Route path="/bath" component={Bath}/>
+          <Route path="/candle" component={Candle}/>
+          <Route path="/Diffuser" component={Diffuser}/>
           <Route path="/Fixweb" component={Fixweb}/>
           <Route path="/product/:productId" component={Product} />
           <Route path="/login" component={Login} />

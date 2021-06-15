@@ -1,4 +1,5 @@
 import { Layout } from "antd";
+import NavBar from "../components/NavBar";
 import AppHeader from "../components/Header";
 import AppFooter from "../components/Footer";
 import ProfileCard from "../components/ProfileCard";
@@ -8,6 +9,9 @@ const { Header, Content, Footer } = Layout;
 function Profile() {
   return (
     <Layout className="container main-layout">
+      <Layout className="bg-gray">
+        <NavBar />
+      </Layout>
       <Layout className="bg-gray main-area">
         <Header className="layout-header">
           <AppHeader title="Profile Page" />

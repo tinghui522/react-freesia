@@ -1,11 +1,11 @@
-import products from "../json/perfume.json"
+import products from "../json/diffuser.json"
 import { Row, Col, Button } from "antd";
 import ProductItem from "./ProductItem";
 import { useContext, useRef } from "react";
 import { StoreContext } from "../store"
 import { Link } from "react-router-dom";
 
-export default function PerfumeDetail() {
+export default function DiffuserDetail() {
     const { dispatch } = useContext(StoreContext);
     const myRef = useRef<HTMLDivElement>(null);
     const next = () => {
@@ -16,18 +16,22 @@ export default function PerfumeDetail() {
         <hr className="hr-line-productdetail" />
         <div className="perfume-title-bg">
         </div>
-        <Link to="/Perfume">
-         <p className="perfume-title">PERFUMES</p>
+        <Link to="/Bath">
+         <p className="perfume-title">DIFFUSER</p>
         </Link>
-        <div className="perfume-detail">
-            <img src="https://github.com/tinghui522/react-mid/blob/main/src/img/product-word.png?raw=true" className="product-word"/>
-            <img src="https://github.com/tinghui522/react-mid/blob/main/src/img/jo-malone-london-blossoms-yuja-cologne.png?raw=true" className="product-img" />
-            <Button type="text" onClick={next}>
-                <img src="https://github.com/tinghui522/react-mid/blob/main/src/img/up-arrow.png?raw=true"className="arrow-icon"/>
-            </Button>
-        </div>
+        <div className="product-bg">
+            <div>
+            <img src="https://github.com/tinghui522/react-freesia/blob/master/src/img/img_diffuserBanner.png?raw=true" className="product-bg"/>
+            </div>
+            <div>
+            <img src="https://github.com/tinghui522/react-freesia/blob/master/src/img/img_diffuserBanner2.png?raw=true" className="product-bg"/>
+            </div>
+            <div>
+            <img src="https://github.com/tinghui522/react-freesia/blob/master/src/img/img_diffuserBanner3.png?raw=true" className="product-bg"/>
+            </div>
+        </div>   
         <div>
-        <div className="product-title-bg1"></div>
+        <div className="product-title-bg"></div>
             <p className="product-title">PRODUCTS</p>
         <Row gutter={[0,8]}>
             {products.map(product => (

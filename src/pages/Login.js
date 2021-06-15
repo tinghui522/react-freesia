@@ -1,6 +1,6 @@
 import { Layout } from "antd";
 import * as QueryString from "query-string";
-
+import NavBar from "../components/NavBar";
 import AppHeader from "../components/Header";
 import AppFooter from "../components/Footer";
 import LoginCard from "../components/LoginCard";
@@ -13,6 +13,9 @@ function Login(props) {
   console.log(redirect)
   return (
     <Layout className="container main-layout">
+      <Layout className="bg-gray">
+        <NavBar />
+      </Layout>
       <Layout className="bg-gray main-area">
         <Header className="layout-header">
           <AppHeader title="Login" />

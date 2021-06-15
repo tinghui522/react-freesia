@@ -1,6 +1,7 @@
 [
   {
     "id": "ZmjJ8v0P8A4ea4VIVm1u",
+    "title":"PERFUMES",
     "category": "Citrus",
     "name": "Lime Basil & Mandarin Cologne",
     "sku": "sku_313356",
@@ -13,6 +14,7 @@
   },
   {
     "id": "BiJtyTH8aXvhM5FvL1dN",
+    "title":"PERFUMES",
     "category": "Citrus",
     "name": "Basil & Neroli Cologne",
     "sku": "sku_119140",
@@ -21,10 +23,11 @@
     "description": "London at its most fashionably young and fun. Flirt with oh-so floral neroli and a delicious wink of basil. Quintessentially British, always playful. Fresh, fun, full of adventure.",
     "currency": "USD",
     "countInStock": 5,
-    "Size":["30ml","50ml","100ml"]
+    "Size":"100ml"
   },
   {
     "id": "NtAHLNY30qzSYkPGBXDN",
+    "title":"PERFUMES",
     "category": "Woody",
     "name": "Dark Amber & Ginger Lily Cologne Intense",
     "sku": "sku_622147",
@@ -33,10 +36,11 @@
     "description": "Rare Kyara wood. Prized in the Kohdo ceremony, the highly ritualised Japanese art of incense appreciation. Enriched with amber and black orchid. Illuminated by the clean sensuality of black cardamom, ginger and water lily. Calm and relaxing.",
     "currency": "USD",
     "countInStock": 4 ,
-    "Size":["30ml","50ml","100ml"]
+    "Size":"100ml"
   },
   {
     "id": "qtHxc1vAo2Aahp0ufPxL",
+    "title":"PERFUMES",
     "category": "Fruity",
     "name": "English Pear & Freesia Cologne",
     "sku": "sku_125983",
@@ -45,10 +49,11 @@
     "description": "The essence of autumn. The sensuous freshness of just-ripe pears is wrapped in a bouquet of white freesias, and mellowed by amber, patchouli and woods. Luscious and golden.",
     "currency": "USD",
     "countInStock": 5,
-    "Size":["30ml","50ml","100ml"]
+    "Size":"100ml"
   },
   {
     "id": "35WPzwtK9Z0B7lj5XrlX",
+    "title":"PERFUMES",
     "category": "Fruity",
     "name": "Nectarine Blossom & Honey Cologne With Daisy Leaf Lace Design",
     "sku": "sku_313356",
@@ -57,10 +62,11 @@
     "description": "London's Covent Garden early morning market. Succulent nectarine, peach and cassis and delicate spring flowers melt into the note of acacia honey. Sweet and delightfully playful. Etched with a decorative lace design.",
     "currency": "USD",
     "countInStock": 5,
-    "Size":["30ml","50ml","100ml"]
+    "Size":"100ml"
   },
   {
     "id": "3w3pX2DP1FVBrmS8tdvY",
+    "title":"PERFUMES",
     "category": "Spicy",
     "name": "Nutmeg & Ginger Cologne",
     "sku": "sku_119140",
@@ -69,10 +75,11 @@
     "description": "The first scent from Jo Malone London. Sandalwood and cedarwood are seasoned with nutmeg and vibrant ginger. Unexpected and addictive. Available exclusively online.",
     "currency": "USD",
     "countInStock": 5,
-    "Size":["30ml","50ml","100ml"]
+    "Size":"100ml"
   },
   {
     "id": "rUmXnQlVpHy14byyi13n",
+    "title":"PERFUMES",
     "category": "Floral",
     "name": "Gardenia & Oud Absolu",
     "sku": "sku_622147",
@@ -81,10 +88,11 @@
     "description": "",
     "currency": "USD",
     "countInStock": 5,
-    "Size":["30ml","50ml","100ml"]
+    "Size":"100ml"
   },
   {
     "id": "WNCLHjFqt6AsSHT6y6IJ",
+    "title":"PERFUMES",
     "category": "Floral",
     "name": "Violet & Amber Absolu",
     "sku": "sku_125983",
@@ -93,10 +101,11 @@
     "description": "",
     "currency": "USD",
     "countInStock": 5,
-    "Size":["30ml","50ml","100ml"]
+    "Size":"100ml"
   },
   {
     "id": "HyRlSNoL8Dzx7dZDSs7R",
+    "title":"PERFUMES",
     "category": "Light Floral",
     "name": "Wild Bluebell Cologne Duo",
     "sku": "sku_622147",

@@ -49,11 +49,11 @@ export default function CartModal({ isModalVisible, toggleModal }) {
                      <div className="cart-name">{item.name}</div>
                     <div className="cart-size">{item.Size}</div>
                      <div className="cart-qty">
-                     Qty: {"  "}
+                        Qty: {"  "}
                         <Select
                            defaultValue={item.qty}
                            className="select-style"
-                           onChange={(val) => addCartItem(dispatch, item, val)}
+                           onChange={(qty) => addCartItem(dispatch, item, qty)}
                         >
                            {[...Array(item.countInStock).keys()].map((x) => (
                               <Option key={x + 1} value={x + 1}>

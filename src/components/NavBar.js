@@ -27,13 +27,13 @@ export default function NavBar() {
                 <NavItem onClose={handleCloseDrawer} to="/Perfume" className="nav-item" activeClassName="nav-item--active">
                     PERFUME
                 </NavItem>
-                <NavItem onClose={handleCloseDrawer} to="/Fixweb" className="nav-item" activeClassName="nav-item--active">
+                <NavItem onClose={handleCloseDrawer} to="/Candle" className="nav-item" activeClassName="nav-item--active">
                     CANDLES
                 </NavItem>
-                <NavItem onClose={handleCloseDrawer} to="/Fixweb" className="nav-item" activeClassName="nav-item--active">
+                <NavItem onClose={handleCloseDrawer} to="/Bath" className="nav-item" activeClassName="nav-item--active">
                     BATH/BODY
                 </NavItem>
-                <NavItem onClose={handleCloseDrawer} to="/Fixweb" className="nav-item" activeClassName="nav-item--active">
+                <NavItem onClose={handleCloseDrawer} to="/Diffuser" className="nav-item" activeClassName="nav-item--active">
                     DIFFUSER
                 </NavItem>
             </Drawer>
