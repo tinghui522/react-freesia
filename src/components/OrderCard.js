@@ -1,6 +1,6 @@
 import { useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
-import { Row, Col, Spin } from "antd";
+import { Row, Col, Spin, Button } from "antd";
 import { LoadingOutlined } from '@ant-design/icons';
 import GooglePayButton from '@google-pay/button-react';
 import { requestOrderDetail } from "../actions"
@@ -49,19 +49,18 @@ export default function OrderCard({ orderId }) {
 
    return (
       <>
-         {loading
-            ? (
+         {loading ? (
                <div className="spinner-wrap">
                   <Spin indicator={antIcon} className="spinner" />
                </div>
             ) : (
-               <Row gutter={[24, 24]}>
+               <Row gutter={[0, 8]}>
                   <Col
                      xs={{ span: 20, offset: 2 }}
-                     lg={{ span: 13, offset: 2 }}
+                     lg={{ span: 9, offset: 3 }}
                   >
                      <div className="card card-body">
-                        <h2 style={{ color: 'white' }}>Shipping</h2>
+                        <h2 style={{ color: '#4d4d4d' }}>Shipping</h2>
                         <p>
                            <strong>Name:</strong> {order.shippingAddress.fullName} <br />
                            <strong>Address: </strong> {order.shippingAddress.address},
@@ -70,39 +69,35 @@ export default function OrderCard({ orderId }) {
                         </p>
                      </div>
                      <div className="card card-body">
-                        <h2 style={{ color: 'white' }}>Payment</h2>
+                        <h2 style={{ color: '#4d4d4d' }}>Payment</h2>
                         <p>
                            <strong>Method:</strong> {order.paymentMethod}
                         </p>
                      </div>
                      <div className="card card-body">
-                        <h2 style={{ color: 'white' }}>Order Items</h2>
+                        <h2 style={{ color: '#4d4d4d' }}>Order Items</h2>
                         {orderItems.length === 0 ? (
                            <div>Cart is empty</div>
                         ) : (
                            orderItems.map(item => (
-                              <li key={item.id} className="cart-item">
+                              <li key={item.id} className="order-item">
                                  <div className="cart-image">
                                     <img src={item.image} alt={item.name} />
                                  </div>
-                                 <div className="cart-item-content">
-                                    <div className="cart-name">{item.name}</div>
-                                    <div className="product-qty">
-                                       Qty: {item.qty}
+                                    <div className="order-name">{item.name}</div>
+                                    <div className="order-name">
+                                    Qty: {item.qty}
                                     </div>
-                                 </div>
-                                 <div className="cart-item-end">
-                                    <div className="cart-price">
-                                       ${item.price * item.qty}
+                                    <div className="order-name">
+                                    ${item.price * item.qty}
                                     </div>
-                                 </div>
-
                               </li>
                            ))
                         )}
-                        <div className="cart-total-price-wrap">
+                        <hr className="hr-line-order" />
+                        <div className="total-price-wrap">
                            Total
-            <div className="cart-total-price">${order.totalPrice}</div>
+                           <div className="order-total-price">${order.totalPrice}</div>
                         </div>
                      </div>
 
@@ -112,7 +107,7 @@ export default function OrderCard({ orderId }) {
                      lg={{ span: 7, offset: 0 }}
                   >
                      <div className="card card-body">
-                        <h2 style={{ color: 'white' }}>Order Summary</h2>
+                        <h2 style={{ color: '#4d4d4d' }}>Order Summary</h2>
                         <div className="row">
                            <div>Items</div>
                            <div>${order.itemsPrice}</div>
@@ -146,12 +141,12 @@ export default function OrderCard({ orderId }) {
 
                   </Col>
                </Row>
-
+               
             )
-
+            
          }
+         
+         <div className="block2"></div>
       </>
-
-
    );
 }

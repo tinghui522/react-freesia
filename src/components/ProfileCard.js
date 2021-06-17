@@ -146,63 +146,57 @@ loading,
             ) : (
               order.length===0?(<div className='eachOrder_title'><p>None</p></div>):(
               order.map((eachOrder,index)=>{return(
-<Row gutter={[24, 24]}>
+<Row gutter={[0, 8]}>
 <Col         
  xs={{ span: 20, offset: 2 }}
- 
  >
-
   <div className="Order_title"><p>Order {index+1}</p></div>
   </Col>
 <Col         
  xs={{ span: 20, offset: 2 }}
- lg={{ span: 13, offset: 2 }}
+ lg={{ span: 9, offset: 3 }}
  >
 
 <div className="card card-body">
-                        <h2 style={{ color: 'white' }}>Shipping</h2>
-                        <p>
-                           <strong>Name:</strong> {eachOrder.shippingAddress.fullName} <br />
-                           <strong>Address: </strong> {eachOrder.shippingAddress.address},
-                  {eachOrder.shippingAddress.city}, {eachOrder.shippingAddress.postalCode}
-                  ,{eachOrder.shippingAddress.country}
-                        </p>
-                     </div>
-                     <div className="card card-body">
-                        <h2 style={{ color: 'white' }}>Payment</h2>
-                        <p>
-                           <strong>Method:</strong> {eachOrder.paymentMethod}
-                        </p>
-                     </div>
-                     
-                     <div className="card card-body">
-                        <h2 style={{ color: 'white' }}>Order Items</h2>
-                        {
-                           eachOrder.orderItems.map(item => (
-                              <li key={item.id} className="cart-item">
-                                 <div className="cart-image">
-                                    <img src={item.image} alt={item.name} />
-                                 </div>
-                                 <div className="cart-item-content">
-                                    <div className="cart-name">{item.name}</div>
-                                    <div className="product-qty">
-                                       Qty: {item.qty}
-                                    </div>
-                                 </div>
-                                 <div className="cart-item-end">
-                                    <div className="cart-price">
-                                       ${item.price * item.qty}
-                                    </div>
-                                 </div>
-
-                              </li>
-                           ))
-                           }
-                        <div className="cart-total-price-wrap">
-                           Total
-            <div className="cart-total-price">${eachOrder.totalPrice}</div>
-                        </div>
-                     </div>
+  <h2 style={{ color: '#4d4d4d' }}>Shipping</h2>
+  <p>
+      <strong>Name:</strong> {eachOrder.shippingAddress.fullName} <br />
+      <strong>Address: </strong> {eachOrder.shippingAddress.address},
+      {eachOrder.shippingAddress.city}, {eachOrder.shippingAddress.postalCode}
+      ,{eachOrder.shippingAddress.country}
+  </p>
+</div>
+<div className="card card-body">
+  <h2 style={{ color: '#4d4d4d' }}>Payment</h2>
+  <p>
+      <strong>Method:</strong> {eachOrder.paymentMethod}
+  </p>
+</div>
+  
+<div className="card card-body">
+    <h2 style={{ color: '#4d4d4d' }}>Order Items</h2>
+    {
+        eachOrder.orderItems.map(item => (
+        <li key={item.id} className="order-item">
+          <div className="cart-image">
+            <img src={item.image} alt={item.name} />
+          </div>
+            <div className="order-name">{item.name}</div>
+            <div className="order-name">
+              Qty: {item.qty}
+            </div>
+            <div className="order-name">
+              ${item.price * item.qty}
+            </div>
+        </li>
+        ))
+        }
+    <hr className="hr-line-order" />
+    <div className="total-price-wrap">
+      Total
+      <div className="order-total-price">${eachOrder.totalPrice}</div>
+    </div>
+</div>
 
  </Col>
    <Col
@@ -236,12 +230,12 @@ loading,
 
 </Col>     
 </Row>         
-              )
-            })
-              )
-          
+    )
+  })
+    )
 
-            )
+
+  )
    ):(<div></div>)
          }
    </div>

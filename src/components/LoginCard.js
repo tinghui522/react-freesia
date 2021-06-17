@@ -88,7 +88,6 @@ const LoginCard = ({ redirect }) => {
       <Form.Item className="login-enter">
         {loading ? (
           <Button
-            type="primary"
             htmlType="submit"
             className="login-form__button"
             loading
@@ -97,7 +96,6 @@ const LoginCard = ({ redirect }) => {
           </Button>
         ) : (
           <Button
-            type="primary"
             htmlType="submit"
             className="login-form__button"
           >

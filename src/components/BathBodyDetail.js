@@ -8,9 +8,6 @@ import { Link } from "react-router-dom";
 export default function BathBodyDetail() {
     const { dispatch } = useContext(StoreContext);
     const myRef = useRef<HTMLDivElement>(null);
-    const next = () => {
-        window.scrollBy(0,720);
-      }
     return (
         <content className="content"> 
         <hr className="hr-line-productdetail" />

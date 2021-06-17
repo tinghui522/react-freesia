@@ -47,16 +47,22 @@ import {
   getOrderByUser 
 } from "../api";
 
-export const addCartItem = (dispatch, product, qty,Size) => {
+export const addCartItem = (dispatch, product, qty) => {
   const item = {
     id: product.id,
+    title: product.title,
     category: product.category,
     name: product.name,
     image: product.image,
     price: product.price,
     countInStock: product.countInStock,
     qty,
-    Size,
+    Size: product.Size,
+    Use: product.Use,
+    detail: product.detail,
+    useImg1: product.useImg1,
+    useImg2: product.useImg2,
+    Work: product.Work
   };
   dispatch({
     type: ADD_CART_ITEM,
@@ -86,7 +92,7 @@ export const savePaymentMethod = (dispatch, paymentMethod) => {
   });
 }
 
-export const setProductDetail =  async (dispatch, productId, qty,Size) => {
+export const setProductDetail =  async (dispatch, productId, qty) => {
   dispatch({ type: BEGIN_PRODUCTS_REQUEST });
   try {
     const product = await getProductById(productId);
@@ -103,7 +109,6 @@ export const setProductDetail =  async (dispatch, productId, qty,Size) => {
         payload: {
           product,
           qty,
-          Size
         }
       })
     dispatch({ type: SUCCESS_PRODUCTS_REQUEST });
