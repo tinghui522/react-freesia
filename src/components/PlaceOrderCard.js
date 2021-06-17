@@ -45,13 +45,13 @@ export default function PlaceOrderCard() {
             <Spin indicator={antIcon} className="spinner" />
           </div>
         ) : (
-          <Row gutter={[24, 24]}>
+          <Row gutter={[0, 8]}>
             <Col
               xs={{ span: 20, offset: 2 }}
-              lg={{ span: 13, offset: 2 }}
+              lg={{ span: 9, offset: 3 }}
             >
               <div className="card card-body">
-                <h2 style={{ color: 'white' }}>Shipping</h2>
+                <h2 style={{ color: '#4d4d4d' }}>Shipping</h2>
                 <p>
                   <strong>Name:</strong> {cart.shippingAddress.fullName} <br />
                   <strong>Address: </strong> {cart.shippingAddress.address},
@@ -60,49 +60,45 @@ export default function PlaceOrderCard() {
                 </p>
               </div>
               <div className="card card-body">
-                <h2 style={{ color: 'white' }}>Payment</h2>
+                <h2 style={{ color: '#4d4d4d' }}>Payment</h2>
                 <p>
                   <strong>Method:</strong> {cart.paymentMethod}
                 </p>
               </div>
               <div className="card card-body">
-                <h2 style={{ color: 'white' }}>Order Items</h2>
+                <h2 style={{ color: '#4d4d4d' }}>Order Items</h2>
                 {cartItems.length === 0 ? (
                   <div>Cart is empty</div>
                 ) : (
                   cartItems.map(item => (
-                    <li key={item.id} className="cart-item">
+                    <li key={item.id} className="order-item">
                       <div className="cart-image">
                         <img src={item.image} alt={item.name} />
                       </div>
-                      <div className="cart-item-content">
-                        <div className="cart-name">{item.name}</div>
-                        <div className="product-qty">
+                        <div className="order-name">{item.name}</div>
+                        <div className="order-name">
                           Qty: {item.qty}
                         </div>
-                      </div>
-                      <div className="cart-item-end">
-                        <div className="cart-price">
+                        <div className="order-name">
                           ${item.price * item.qty}
                         </div>
-                      </div>
-
                     </li>
                   ))
                 )}
-                <div className="cart-total-price-wrap">
+              <hr className="hr-line-order" />
+                <div className="total-price-wrap">
                   Total
-            <div className="cart-total-price">${getTotalPrice()}</div>
+                <div className="order-total-price">${getTotalPrice()}</div>
                 </div>
               </div>
 
             </Col>
             <Col
               xs={{ span: 20, offset: 2 }}
-              lg={{ span: 7, offset: 0 }}
+              lg={{ span: 8, offset: 0 }}
             >
               <div className="card card-body">
-                <h2 style={{ color: 'white' }}>Order Summary</h2>
+                <h2 style={{ color: '#4d4d4d' }}>Order Summary</h2>
                 <div className="row">
                   <div>Items</div>
                   <div>${cart.itemsPrice}</div>
@@ -137,6 +133,7 @@ export default function PlaceOrderCard() {
           </Row>
         )
       }
+      <div className="block2"></div>
     </>
 
   );

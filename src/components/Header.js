@@ -24,7 +24,6 @@ export default function Header({title}) {
                </Link>
             </div>
             <div className="header-left">
-
                <UserInfo style={{marginRight: '25px'}} />
                <CartSummary />
             </div>

@@ -98,9 +98,8 @@ export default function ShippingAddressCard() {
 
       <Form.Item>
         <Button
-          type="primary"
           htmlType="submit"
-          className="login-form__button"
+          className="shipping-form__button"
         >
           Continue
         </Button>

@@ -6,7 +6,22 @@
     },
     {
         "title": "Freesia",
-        "name": "product",
-        "url": "/product" 
-    }
+        "name": "Perfume",
+        "url": "/products/perfume"
+     },
+     {
+        "title": "Freesia",
+        "name": "Bath",
+        "url": "/products/bath"
+     },
+     {
+        "title": "Freesia",
+        "name": "Candles",
+        "url": "/products/candles"
+     },
+     {
+        "title": "Freesia",
+        "name": "Diffuser",
+        "url": "/products/diffuser"
+     }
  ]

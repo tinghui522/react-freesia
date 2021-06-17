@@ -18,7 +18,7 @@ export default function PaymentMethodCard() {
       <Form
          onFinish={handleSubmit}
          name="normal_login"
-         className="register-form"
+         className="payment-form"
          initialValues={{paymentMethod}}
          form={form}
       >
@@ -33,13 +33,16 @@ export default function PaymentMethodCard() {
 
          <Form.Item>
             <Button
-               type="primary"
                htmlType="submit"
-               className="login-form__button"
+               className="payment-form__button"
             >
                Continue
         </Button>
+        <div className="block1">
+         
+         </div>
          </Form.Item>
       </Form>
+      
    );
 }

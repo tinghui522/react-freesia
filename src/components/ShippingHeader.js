@@ -9,7 +9,7 @@ export default function ShippingHeader(props) {
   const history = useHistory();
 
   const onClickHeader = () => {
-    setPage(dispatch, "/",  "NORDIC NEST Shopping Cart");
+    setPage(dispatch, "/",  "Freesia");
     history.push("/");
   };
 

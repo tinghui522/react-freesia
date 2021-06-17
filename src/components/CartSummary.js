@@ -8,6 +8,7 @@ import { StoreContext } from "../store";
 export default function CartSummary() {
   const { state: { cart: { cartItems } } } = useContext(StoreContext);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const toggleModal = () => setIsModalVisible(!isModalVisible);
 
   const count = (cartItems.length > 0) ?
     cartItems.reduce((sum, item) => sum + item.qty, 0)
@@ -16,17 +17,16 @@ export default function CartSummary() {
   return (
     <>
       <Link to="/cart">
-        <nav className="header-cart-summary" >
+        <nav onClick={toggleModal} className="header-cart-summary" >
           <Badge count={count} size={"small"} style={{ color: 'black', backgroundColor: '#EAE3D8' }}>
             <CartIcon size={32}/>
           </Badge>
         </nav>
       </Link>
-      
-      {/*<CartModal
+        {/* <CartModal
         isModalVisible={isModalVisible}
         toggleModal={toggleModal}
-      /> */}
+      />    */}
     </>
   );
 }

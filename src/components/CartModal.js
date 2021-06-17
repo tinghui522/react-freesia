@@ -6,10 +6,10 @@ import { addCartItem, removeCartItem, setProductDetail } from "../actions";
 
 const { Option } = Select;
 
-export default function CartModal({ isModalVisible, toggleModal }) {
+export default function CartModal() {
    const { state: { cart: { cartItems } }, dispatch } = useContext(StoreContext);
    const history = useHistory();
-   const handleCancel = () => toggleModal(!isModalVisible);
+   //const handleCancel = () => toggleModal(!isModalVisible);
    const getTotalPrice = () => {
       return (cartItems.length > 0) ?
          cartItems.reduce((sum, item) => sum + item.price * item.qty, 0)
@@ -17,7 +17,7 @@ export default function CartModal({ isModalVisible, toggleModal }) {
    }
 
    const checkoutHandler = () => {
-      handleCancel();
+      //handleCancel();
       history.push("/login?redirect=shipping");
    }
 
@@ -26,21 +26,25 @@ export default function CartModal({ isModalVisible, toggleModal }) {
    }, [cartItems])
 
    return (
-      <Modal
-         title="Shopping Bag"
-         visible={isModalVisible}
-         onCancel={handleCancel}
-         footer={null}
-      >
+      //  <Modal
+      //       title="Shopping Bag"
+      //       visible={isModalVisible}
+      //       onCancel={handleCancel}
+      //  >
+      <>
+      <hr className="hr-line-productdetail" />
+      <div className="cart-title-bg"></div>
+         <p className="cart-title">Shopping Bag</p>
+      
          {cartItems.length === 0 ? (
-            <div>Cart is empty</div>
+            <div className="cart-empty">Cart is empty</div>
          ) : (
             cartItems.map(item => (
                <li key={item.id} className="cart-item">
                   <Link to={`/product/${item.category}/${item.id}`}>
                      <div className="cart-image" onClick={()=>{
                         setProductDetail(dispatch, item.id, item.qty);
-                        handleCancel();
+                        //handleCancel();
                      }}>
                         <img src={item.image} alt={item.name} />
                      </div>
@@ -89,6 +93,7 @@ export default function CartModal({ isModalVisible, toggleModal }) {
          <div className="block">
 
          </div>
-      </Modal>
+         </>
+      //</div>
    );
 }
