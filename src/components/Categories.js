@@ -9,7 +9,7 @@ export default function Category() {
             <img src="https://github.com/tinghui522/react-mid/blob/main/src/img/detailpic.png?raw=true" className="detailpic"/>
          </div>
          <div className="categories">
-            <img src="https://github.com/tinghui522/react-mid/blob/main/src/img/categories-word.png?raw=true" className="categories-word"/>
+            <img src="https://github.com/tinghui522/react-freesia/blob/master/src/img/categories-word.png?raw=true" className="categories-word"/>
             <div>
                 <Link to="/perfume">
                 <img src="https://github.com/tinghui522/react-mid/blob/main/src/img/perfume.png?raw=true" className="categories-img1"/>

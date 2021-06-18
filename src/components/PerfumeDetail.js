@@ -14,8 +14,7 @@ export default function PerfumeDetail() {
     return (
         <content className="content"> 
         <hr className="hr-line-productdetail" />
-        <div className="perfume-title-bg">
-        </div>
+        <div className="perfume-title-bg"></div>
         <Link to="/Perfume">
          <p className="perfume-title">PERFUMES</p>
         </Link>
