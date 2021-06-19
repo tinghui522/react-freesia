@@ -1902,7 +1902,7 @@ letter-spacing: 3px;
     margin-top: 0rem;
   }
   .hr-line-productdetail1{
-    width: 410px;
+    width: 80%;
     border: 0;
     border-top: solid 3px;
     border-color: #DAD4CA;
@@ -1915,8 +1915,7 @@ letter-spacing: 3px;
     font-size: 1.5rem;
   }
   .hr-line-productdetail2{
-    width: 410px;
-    height: 5px;
+    width: 80%;
     border: 0;
     border-top: solid 3px;
     border-color: #DAD4CA;
@@ -1961,7 +1960,7 @@ letter-spacing: 3px;
   }
   
   .hr-line-productdetail3{
-    width: 410px;
+    width: 80%;
     border: 0;
     border-top: solid 3px;
     border-color: #DAD4CA;
@@ -1980,7 +1979,7 @@ letter-spacing: 3px;
   }
   
   .hr-line-productdetail4{
-    width: 410px;
+    width: 80%;
     height: 5px;
     border: 0;
     border-top: solid 2px;
@@ -2010,8 +2009,7 @@ letter-spacing: 3px;
   }
   
   .hr-line-productdetail-works{
-    width: 410px;
-    height: 5px;
+    width: 80%;
     border: 0;
     border-top: solid 2px;
     border-color: #DAD4CA;
@@ -2051,12 +2049,12 @@ letter-spacing: 3px;
   }
 
   .cart-modal-btn {
-    width: 300px;
+    width: 80%;
     font-size: 1rem;
     padding: 0.5rem;
     height: auto;
     margin-top: 2rem;
-    margin-left: 4rem;
+    margin-left: 3rem;
   }
 
   .cart-name{
@@ -2071,15 +2069,15 @@ letter-spacing: 3px;
   }
 
   .cart-image img{
-    max-width: 6rem;
-    max-height: 6rem;
+    max-width: 7rem;
+    max-height: 7rem;
     flex: 1 1;
   }
   .cart-image{
     margin-left: -8rem;
   }
   .cart-item-content {
-    margin-left: -3rem;
+    margin-left: -1rem;
     width: 250px;
   }
   .cart-size{
@@ -2108,7 +2106,7 @@ letter-spacing: 3px;
     width: 20px;
   }
   .hr-line-total{
-    width: 410px;
+    width: 85%;
     border: 0;
     border-top: solid 2px;
     border-color: #DAD4CA;
@@ -2116,7 +2114,7 @@ letter-spacing: 3px;
     margin-left: 2rem;
   }
   .cart-total-price-wrap {
-    margin-left: 13rem;
+    margin-left: 16rem;
     margin-top: 1.5rem;
     font-size: 1.2rem;
     width: 200px;
@@ -2126,7 +2124,7 @@ letter-spacing: 3px;
     font-size: 1.2rem;
   }
   .hr-line-total-btn{
-    width: 410px;
+    width: 85%;
     border: 0;
     border-top: solid 2px;
     border-color: #DAD4CA;
