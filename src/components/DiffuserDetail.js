@@ -47,7 +47,7 @@ export default function DiffuserDetail() {
             ))}
         </Row>
         </div>
-        <div className="block2"></div>
+        <div className="block1"></div>
         <BackTop/>
        </content>
     );
