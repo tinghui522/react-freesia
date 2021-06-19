@@ -30,7 +30,7 @@ export default function ProductItem({ product }) {
                 <div className="product-more">
                     
                     <span
-                        className="product-price">
+                        className="product-price1">
                         USD {product.price}.00
                     </span>
                 </div>

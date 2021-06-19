@@ -88,7 +88,6 @@ loading,
       >
         <Input.Password />
       </Form.Item>
-
       <Form.Item
         name="rePassword"
         label="Re-enter Password"
@@ -122,7 +121,6 @@ loading,
           Submit
         </Button>
         <Button
-          style={{ marginTop: "0.8rem" }}
           className="profile-form__button2"
           onClick={handleLogout}
         >
@@ -178,7 +176,7 @@ loading,
     {
         eachOrder.orderItems.map(item => (
         <li key={item.id} className="order-item">
-          <div className="cart-image">
+          <div className="order-image">
             <img src={item.image} alt={item.name} />
           </div>
             <div className="order-name">{item.name}</div>

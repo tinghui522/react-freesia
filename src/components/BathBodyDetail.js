@@ -1,5 +1,5 @@
 import products from "../json/bath.json"
-import { Row, Col, Button } from "antd";
+import { Row, Col, Button,BackTop } from "antd";
 import ProductItem from "./ProductItem";
 import { useContext, useRef } from "react";
 import { StoreContext } from "../store"
@@ -28,22 +28,24 @@ export default function BathBodyDetail() {
             </div>
         </div>
         <div>
-        <div className="product-title-bg"></div>
-            <p className="product-title">PRODUCTS</p>
-        <Row gutter={[0,8]}>
-            {products.map(product => (
-                <Col 
-                key={product.id} 
-                sm={{ span: 12 }} 
-                lg={{ span: 8 }}
-                xl={{ span: 7 }}
-                xxl={{ span: 2 }}
-                >
-                <ProductItem product={product}/>
-                </Col>
-            ))}
-        </Row>
+            <div className="product-title-bg"></div>
+                <p className="product-title">PRODUCTS</p>
+            <Row gutter={[0,8]}>
+                {products.map(product => (
+                    <Col 
+                    key={product.id} 
+                    sm={{ span: 12 }} 
+                    lg={{ span: 8 }}
+                    xl={{ span: 7 }}
+                    xxl={{ span: 2 }}
+                    >
+                    <ProductItem product={product}/>
+                    </Col>
+                ))}
+            </Row>
         </div>
+        <div className="block2"></div>
+        <BackTop/>
        </content>
     );
  }

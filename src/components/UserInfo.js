@@ -24,8 +24,8 @@ export default function UserInfo(props) {
       <>
          <nav onClick={goToProfile} style={{ ...props.style }} className="header-cart-summary" >
             {userInfo
-               ? <UserOutlined style={{ fontSize: '32px', color: '#000',marginLeft:'-5rem', marginTop:'0.1rem' }} />
-               : <UserSwitchOutlined style={{ fontSize: '32px', color: '#000', marginLeft:'-5rem', marginTop:'0.1rem' }} />
+               ? <img src="https://img.icons8.com/material-outlined/96/000000/user--v1.png" className="header-icon"/>
+               : <img src="https://img.icons8.com/material-outlined/96/000000/user--v1.png" className="header-icon"/>
 
             }
             {/* <p className="cart-summary-text1">

@@ -68,7 +68,7 @@ export default function CartModal() {
                      </div>
                   
                      <div className="cart-price">
-                        ${item.price * item.qty}    
+                        ${item.price * item.qty}.00    
                      </div>
                      <div className="cart-item-delete" onClick={() => removeCartItem(dispatch,item.id)}>
                         x
@@ -80,7 +80,7 @@ export default function CartModal() {
          <hr className="hr-line-total" />
          <div className="cart-total-price-wrap">
            TOTAL：
-            <div className="cart-total-price">${getTotalPrice()}</div>
+            <div className="cart-total-price">${getTotalPrice()}.00</div>
          </div>
          <hr className="hr-line-total-btn" />
          <Button

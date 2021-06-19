@@ -52,6 +52,7 @@ const RegisterCard = ({ redirect }) => {
 
   return (
     <div className="register-form-wrapper">
+      <hr className="hr-line-productdetail" />
     <Form
       {...formItemLayout}
       form={form}
@@ -60,7 +61,7 @@ const RegisterCard = ({ redirect }) => {
       className="register-form"
       scrollToFirstError
     >
-      <hr className="hr-line-productdetail" />
+      
       <Form.Item
         name="name"
         label="Your Name"

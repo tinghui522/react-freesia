@@ -1,4 +1,5 @@
 import { Layout } from "antd";
+import NavBar from "../components/NavBar";
 import OrderHeader from "../components/OrderHeader";
 import OrderCard from "../components/OrderCard";
 import AppFooter from "../components/Footer";
@@ -8,6 +9,9 @@ function Order({ match }) {
    return (
     <Layout className="container main-layout">
       <Layout className="bg-gray main-area">
+      <Layout className="bg-gray">
+        <NavBar />
+      </Layout>
         <Header className="layout-header">
           <OrderHeader title={`Order: ${match.params.orderId}`} />
         </Header>

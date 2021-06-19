@@ -14,7 +14,7 @@ function Profile() {
       </Layout>
       <Layout className="bg-gray main-area">
         <Header className="layout-header">
-          <AppHeader title="Profile Page" />
+          <AppHeader title="Profile" />
         </Header>
         <Content className="layout-content">
           <ProfileCard />

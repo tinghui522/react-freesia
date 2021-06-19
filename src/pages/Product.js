@@ -11,7 +11,7 @@ import { StoreContext } from "../store"
 const { Header, Content,Footer } = Layout;
 
 function Product({ match }) {
-   const { dispatch } = useContext(StoreContext);
+   const { state: { page: { title } }, dispatch } = useContext(StoreContext);
 
    useEffect(() => {
       setProductDetail(dispatch, match.params.productId, 0, match.params.category)
@@ -27,7 +27,7 @@ function Product({ match }) {
             <AppHeader title="Freesia" />
          </Header>
             <Content className="layout-content">
-               <ProductDetail />
+               <ProductDetail title={title}/>
             </Content>
             <Footer className="layout-footer">
                <AppFooter/>

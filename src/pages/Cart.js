@@ -10,7 +10,7 @@ import { setProductDetail } from "../actions";
 const { Header, Content, Footer } = Layout;
 
 function Cart({ match }) {
-  const { dispatch } = useContext(StoreContext);
+  const { state: { page: { title } }, dispatch } = useContext(StoreContext);
   useEffect(() => setProductDetail(dispatch, match.params.productId, 0), [])
 
   return (
@@ -20,7 +20,7 @@ function Cart({ match }) {
       </Layout>
       <Layout className="bg-gray">
         <Header className="layout-header">
-          <AppHeader title="Shopping Bag" /> 
+          <AppHeader title="Freesia"/> 
         </Header>
         <Content className="layout-content">
           <CartModal />

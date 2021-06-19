@@ -1,5 +1,5 @@
 import products from "../json/diffuser.json"
-import { Row, Col, Button } from "antd";
+import { Row, Col, Button,BackTop } from "antd";
 import ProductItem from "./ProductItem";
 import { useContext, useRef } from "react";
 import { StoreContext } from "../store"
@@ -47,6 +47,8 @@ export default function DiffuserDetail() {
             ))}
         </Row>
         </div>
+        <div className="block2"></div>
+        <BackTop/>
        </content>
     );
  }

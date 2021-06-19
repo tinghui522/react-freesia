@@ -81,7 +81,7 @@ export default function OrderCard({ orderId }) {
                         ) : (
                            orderItems.map(item => (
                               <li key={item.id} className="order-item">
-                                 <div className="cart-image">
+                                 <div className="order-image">
                                     <img src={item.image} alt={item.name} />
                                  </div>
                                     <div className="order-name">{item.name}</div>
