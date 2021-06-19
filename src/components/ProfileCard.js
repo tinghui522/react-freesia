@@ -202,7 +202,7 @@ loading,
    lg={{ span: 7, offset: 0 }}
 >
    <div className="card card-body">
-      <h2 style={{ color: 'white' }}>Order Summary</h2>
+      <h2 style={{ color: '#4d4d4d' }}>Order Summary</h2>
       <div className="row">
          <div>Items</div>
          <div>${eachOrder.itemsPrice}</div>
