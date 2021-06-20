@@ -19,10 +19,10 @@ export default function PerfumeDetail() {
          <p className="perfume-title">PERFUMES</p>
         </Link>
         <div className="perfume-detail">
-            <img src="https://github.com/tinghui522/react-mid/blob/main/src/img/product-word.png?raw=true" className="product-word"/>
-            <img src="https://github.com/tinghui522/react-mid/blob/main/src/img/jo-malone-london-blossoms-yuja-cologne.png?raw=true" className="product-img" />
+            <img src="/img/product-word.png" className="product-word"/>
+            <img src="/img/jo-malone-london-blossoms-yuja-cologne.png" className="product-img" />
             <Button type="text" onClick={next}>
-                <img src="https://github.com/tinghui522/react-mid/blob/main/src/img/up-arrow.png?raw=true"className="arrow-icon"/>
+                <img src="/img/up-arrow.png"className="arrow-icon"/>
             </Button>
         </div>
         <div>

@@ -263,7 +263,6 @@ body {
   margin-top: -5.8rem;
   margin-left: 51rem ;
 }
-
 .hr-line3 {
   width: 430px;
   border: 0;
@@ -272,7 +271,6 @@ body {
   margin-top: 2rem;
   margin-left: 17.5rem ;
 }
-
 .hr-line4 {
   width: 430px;
   border: 0;
@@ -1166,17 +1164,24 @@ letter-spacing: 3px;
   margin-left: 66.5rem;
   height: 26px;
 }
-
+.facebook-icon:hover{
+  transform: scale(1.1);
+}
 .instagram-icon{
   margin-top: -3.3rem;
   margin-left: 68.5rem;
   height: 26px;
 }
-
+.instagram-icon:hover{
+  transform: scale(1.1);
+}
 .line-icon{
   margin-top: -6rem;
   margin-left: 71.2rem;
   height: 26px;
+}
+.line-icon:hover{
+  transform: scale(1.1);
 }
 /*Login*/
 .ant-checkbox-checked .ant-checkbox-inner{

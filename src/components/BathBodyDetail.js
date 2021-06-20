@@ -18,13 +18,13 @@ export default function BathBodyDetail() {
         </Link>
         <div className="product-bg">
             <div>
-                <img src="https://github.com/tinghui522/react-freesia/blob/master/src/img/img_bathBanner.png?raw=true" className="product-bg"/>
+                <img src="/img/img_bathBanner.png" className="product-bg"/>
             </div>
             <div>
-                <img src="https://github.com/tinghui522/react-freesia/blob/master/src/img/img_bathBanner2.png?raw=true" className="product-bg"/> 
+                <img src="/img/img_bathBanner2.png" className="product-bg"/> 
             </div>
             <div>
-                <img src="https://github.com/tinghui522/react-freesia/blob/master/src/img/img_bathBanner3.png?raw=true" className="product-bg"/>  
+                <img src="/img/img_bathBanner3.png" className="product-bg"/>  
             </div>
         </div>
         <div>

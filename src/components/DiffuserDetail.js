@@ -21,13 +21,13 @@ export default function DiffuserDetail() {
         </Link>
         <div className="product-bg">
             <div>
-            <img src="https://github.com/tinghui522/react-freesia/blob/master/src/img/img_diffuserBanner.png?raw=true" className="product-bg"/>
+            <img src="/img/img_diffuserBanner.png" className="product-bg"/>
             </div>
             <div>
-            <img src="https://github.com/tinghui522/react-freesia/blob/master/src/img/img_diffuserBanner2.png?raw=true" className="product-bg"/>
+            <img src="/img/img_diffuserBanner2.png" className="product-bg"/>
             </div>
             <div>
-            <img src="https://github.com/tinghui522/react-freesia/blob/master/src/img/img_diffuserBanner3.png?raw=true" className="product-bg"/>
+            <img src="/img/img_diffuserBanner3.png" className="product-bg"/>
             </div>
         </div>   
         <div>

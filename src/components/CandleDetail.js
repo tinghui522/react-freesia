@@ -21,13 +21,13 @@ export default function CandleDetail() {
         </Link>
         <div className="product-bg">
             <div>
-            <img src="https://github.com/tinghui522/react-freesia/blob/master/src/img/img_candleBanner.png?raw=true" className="product-bg"/>
+            <img src="/img/img_candleBanner.png" className="product-bg"/>
             </div>
             <div>
-            <img src="https://github.com/tinghui522/react-freesia/blob/master/src/img/img_candleBanner2.png?raw=true" className="product-bg"/>
+            <img src="/img/img_candleBanner2.png" className="product-bg"/>
             </div>
             <div>
-            <img src="https://github.com/tinghui522/react-freesia/blob/master/src/img/img_candleBanner3.png?raw=true" className="product-bg"/> 
+            <img src="/img/img_candleBanner3.png" className="product-bg"/> 
             </div>
         </div>   
         <div>

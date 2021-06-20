@@ -1,7 +1,7 @@
 export default function Footer() {
     return (
         <footer className="footer">
-                <img src="https://github.com/tinghui522/react-mid/blob/main/src/img/footer-word.png?raw=true" className="footerword"/>
+                <img src="/img/footer-word.png" className="footerword"/>
                 <div>
                 <p className="footer-topic1">MY ACCOUNT</p>
                 <p className="footer-detail1">My Account<br/>
@@ -24,13 +24,13 @@ export default function Footer() {
                                               freesia2021@gmail.com
                 </p>
                 <a href="https://www.facebook.com/JoMaloneLondon/">
-                <img src="https://github.com/tinghui522/react-mid/blob/main/src/img/facebook.png?raw=true" className="facebook-icon"/>
+                <img src="/img/facebook.png" className="facebook-icon"/>
                 </a>
                 <a href="https://www.instagram.com/jomalonelondon/?hl=zh-tw">
-                <img src="https://github.com/tinghui522/react-mid/blob/main/src/img/instagram.png?raw=true" className="instagram-icon"/>
+                <img src="/img/instagram.png" className="instagram-icon"/>
                 </a>
                 <a href="https://ezstore.line.me/search?query=jomalone">
-                <img src="https://github.com/tinghui522/react-mid/blob/main/src/img/line.png?raw=true" className="line-icon"/>
+                <img src="/img/line.png" className="line-icon"/>
                 </a>
                 </div>
                 <hr className="hr-footer-line" />
