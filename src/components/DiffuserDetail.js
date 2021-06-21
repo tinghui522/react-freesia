@@ -16,7 +16,7 @@ export default function DiffuserDetail() {
         <hr className="hr-line-productdetail" />
         <div className="perfume-title-bg">
         </div>
-        <Link to="/Bath">
+        <Link to="/Diffuser">
          <p className="perfume-title">DIFFUSER</p>
         </Link>
         <div className="product-bg">
@@ -52,5 +52,3 @@ export default function DiffuserDetail() {
        </content>
     );
  }
-
- 

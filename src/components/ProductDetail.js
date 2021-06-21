@@ -15,7 +15,7 @@ function ProductDetail() {
       <hr className="hr-line-productdetail" />
       <div className="perfume-title-bg">
       </div>
-         <p className="perfume-title">{product.title}</p>
+      <p className="perfume-title">{product.title}</p>
       <Row gutter={[0, 8]}>
          <Col
             lg={{ span: 6, offset: 2 }}

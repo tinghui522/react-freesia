@@ -144,100 +144,97 @@ loading,
             ) : (
               order.length===0?(<div className='eachOrder_title'><p>None</p></div>):(
               order.map((eachOrder,index)=>{return(
-<Row gutter={[0, 8]}>
-<Col         
- xs={{ span: 20, offset: 2 }}
- >
-  <div className="Order_title"><p>Order {index+1}</p></div>
-  </Col>
-<Col         
- xs={{ span: 20, offset: 2 }}
- lg={{ span: 9, offset: 3 }}
- >
+                <Row gutter={[0, 8]}>
+                <Col         
+                xs={{ span: 20, offset: 2 }}
+                >
+                  <div className="Order_title"><p>Order {index+1}</p></div>
+                  </Col>
+                <Col         
+                xs={{ span: 20, offset: 2 }}
+                lg={{ span: 9, offset: 3 }}
+                >
 
-<div className="card card-body">
-  <h2 style={{ color: '#4d4d4d' }}>Shipping</h2>
-  <p>
-      <strong>Name:</strong> {eachOrder.shippingAddress.fullName} <br />
-      <strong>Address: </strong> {eachOrder.shippingAddress.address},
-      {eachOrder.shippingAddress.city}, {eachOrder.shippingAddress.postalCode}
-      ,{eachOrder.shippingAddress.country}
-  </p>
-</div>
-<div className="card card-body">
-  <h2 style={{ color: '#4d4d4d' }}>Payment</h2>
-  <p>
-      <strong>Method:</strong> {eachOrder.paymentMethod}
-  </p>
-</div>
-  
-<div className="card card-body">
-    <h2 style={{ color: '#4d4d4d' }}>Order Items</h2>
-    {
-        eachOrder.orderItems.map(item => (
-        <li key={item.id} className="order-item">
-          <div className="order-image">
-            <img src={item.image} alt={item.name} />
-          </div>
-            <div className="order-name">{item.name}</div>
-            <div className="order-name">
-              Qty: {item.qty}
+                <div className="card card-body">
+                  <h2 style={{ color: '#4d4d4d' }}>Shipping</h2>
+                  <p>
+                      <strong>Name:</strong> {eachOrder.shippingAddress.fullName} <br />
+                      <strong>Address: </strong> {eachOrder.shippingAddress.address},
+                      {eachOrder.shippingAddress.city}, {eachOrder.shippingAddress.postalCode}
+                      ,{eachOrder.shippingAddress.country}
+                  </p>
+                </div>
+                <div className="card card-body">
+                  <h2 style={{ color: '#4d4d4d' }}>Payment</h2>
+                  <p>
+                      <strong>Method:</strong> {eachOrder.paymentMethod}
+                  </p>
+                </div>
+                  
+                <div className="card card-body">
+                    <h2 style={{ color: '#4d4d4d' }}>Order Items</h2>
+                    {
+                        eachOrder.orderItems.map(item => (
+                        <li key={item.id} className="order-item">
+                          <div className="order-image">
+                            <img src={item.image} alt={item.name} />
+                          </div>
+                            <div className="order-name">{item.name}</div>
+                            <div className="order-name">
+                              Qty: {item.qty}
+                            </div>
+                            <div className="order-name">
+                              ${item.price * item.qty}
+                            </div>
+                        </li>
+                        ))
+                        }
+                    <hr className="hr-line-order" />
+                    <div className="total-price-wrap">
+                      Total
+                      <div className="order-total-price">${eachOrder.totalPrice}</div>
+                    </div>
+                </div>
+
+                </Col>
+                  <Col
+                  xs={{ span: 20, offset: 2 }}
+                  lg={{ span: 7, offset: 1 }}
+                >
+                  <div className="card card-body">
+                      <h2 style={{ color: '#4d4d4d' }}>Order Summary</h2>
+                      <div className="row">
+                        <div>Items</div>
+                        <div>${eachOrder.itemsPrice}</div>
+                      </div>
+                      <div className="row">
+                        <div>Shipping</div>
+                        <div>${eachOrder.shippingPrice}</div>
+                      </div>
+                      <div className="row">
+                        <div>Tax</div>
+                        <div>${eachOrder.taxPrice}</div>
+                      </div>
+                      <div className="row">
+                        <div>
+                            <strong> Order Total</strong>
+                        </div>
+                        <div>
+                            <strong>${eachOrder.totalPrice}</strong>
+                        </div>
+                      </div>
+                    
+                  </div>
+                </Col>     
+                </Row>         
+              )
+            })
+              )
+            )
+            ):(<div></div>)
+                  }
             </div>
-            <div className="order-name">
-              ${item.price * item.qty}
-            </div>
-        </li>
-        ))
-        }
-    <hr className="hr-line-order" />
-    <div className="total-price-wrap">
-      Total
-      <div className="order-total-price">${eachOrder.totalPrice}</div>
-    </div>
-</div>
-
- </Col>
-   <Col
-   xs={{ span: 20, offset: 2 }}
-   lg={{ span: 7, offset: 0 }}
->
-   <div className="card card-body">
-      <h2 style={{ color: '#4d4d4d' }}>Order Summary</h2>
-      <div className="row">
-         <div>Items</div>
-         <div>${eachOrder.itemsPrice}</div>
-      </div>
-      <div className="row">
-         <div>Shipping</div>
-         <div>${eachOrder.shippingPrice}</div>
-      </div>
-      <div className="row">
-         <div>Tax</div>
-         <div>${eachOrder.taxPrice}</div>
-      </div>
-      <div className="row">
-         <div>
-            <strong> Order Total</strong>
-         </div>
-         <div>
-            <strong>${eachOrder.totalPrice}</strong>
-         </div>
-      </div>
-    
-   </div>
-
-</Col>     
-</Row>         
-    )
-  })
-    )
-
-
-  )
-   ):(<div></div>)
-         }
-   </div>
-  
+        
     </div>
   );
 };

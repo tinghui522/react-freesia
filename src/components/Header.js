@@ -1,15 +1,15 @@
 import { useContext } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useState } from "react-router-dom";
 import { Link } from "react-router-dom"
 import { StoreContext } from "../store"
 import { setPage } from "../actions"
 import CartSummary from "./CartSummary";
 import UserInfo from "./UserInfo";
+import cx from "classnames";
 
 export default function Header({title}) {
    const { dispatch } = useContext(StoreContext);
    const history = useHistory();
-
    const onClickHeader = () => {
       setPage(dispatch, "/",  "Freesia");
     history.push("/");

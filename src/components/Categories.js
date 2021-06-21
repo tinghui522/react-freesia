@@ -6,11 +6,11 @@ export default function Category() {
       <header className="header"> 
          <img src="/img/bigimg.png" className="bigpic" /> 
          <div className="home-detail">
-            <img src="/img/detail.png" className="detail-img"/>
+            <img src="/img/detail.png" className="detail-img fadein"/>
             <img src="/img/detailpic.png" className="detailpic"/>
          </div>
          <div className="categories">
-            <img src="/img/categories-word.png" className="categories-word"/>
+            <img src="/img/categories-word.png" className="categories-word" loading="lazy"/>
             <div>
                 <Link to="/perfume">
                 <img src="/img/perfume.png" className="categories-img1"/>

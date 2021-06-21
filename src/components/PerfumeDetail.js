@@ -8,9 +8,7 @@ import { Link } from "react-router-dom";
 export default function PerfumeDetail() {
     const { dispatch } = useContext(StoreContext);
     const myRef = useRef<HTMLDivElement>(null);
-    const next = () => {
-        window.scrollBy(0,720);
-      }
+
     return (
         <content className="content"> 
         <hr className="hr-line-productdetail" />
@@ -21,9 +19,6 @@ export default function PerfumeDetail() {
         <div className="perfume-detail">
             <img src="/img/product-word.png" className="product-word"/>
             <img src="/img/jo-malone-london-blossoms-yuja-cologne.png" className="product-img" />
-            <Button type="text" onClick={next}>
-                <img src="/img/up-arrow.png"className="arrow-icon"/>
-            </Button>
         </div>
         <div>
             <div className="product-title-bg1"></div>
@@ -49,5 +44,3 @@ export default function PerfumeDetail() {
        </content>
     );
  }
-
- 

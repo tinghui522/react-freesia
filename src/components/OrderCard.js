@@ -104,7 +104,7 @@ export default function OrderCard({ orderId }) {
                   </Col>
                   <Col
                      xs={{ span: 20, offset: 2 }}
-                     lg={{ span: 7, offset: 0 }}
+                     lg={{ span: 7, offset: 1 }}
                   >
                      <div className="card card-body">
                         <h2 style={{ color: '#4d4d4d' }}>Order Summary</h2>

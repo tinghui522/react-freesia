@@ -1,5 +1,6 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import './App.css';
+import 'animate.css';
 import Home from './pages/Home'
 import Product from './pages/Product'
 import Cart from './pages/Cart'
